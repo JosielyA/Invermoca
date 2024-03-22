@@ -33,7 +33,7 @@ function IndexPage() {
             Lorem ipsum dolor, sit amet consectetur{" "}
             <span className="text-myred">adipisicing.</span>
           </h2>
-          <h3 className="pt-8 md:w-8/12">
+          <h3 className="pt-8 text-lg md:w-8/12">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
             nemo dolor cum, perferendis temporibus exercitationem expedita odit
             ad!
@@ -73,6 +73,22 @@ function IndexPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section
+        className="min-h-screen bg-cover bg-center text-white"
+        style={{ backgroundImage: `url(${conductor})` }}
+      >
+        <div className="md:p-40 p-10 md:w-9/12">
+          <h2 className=" text-6xl font-bold">
+            Lorem ipsum dolor, sit amet consectetur{" "}
+            <span className="text-myred">adipisicing.</span>
+          </h2>
+          <h3 className="pt-8 text-lg md:w-8/12">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
+            nemo dolor cum, perferendis temporibus exercitationem expedita odit
+            ad!
+          </h3>
         </div>
       </section>
     </div>
