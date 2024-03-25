@@ -3,6 +3,7 @@ import conductor from "../assets/images/conductor.jpg";
 import fondoblanco from "../assets/images/fondoblanco.jpeg";
 import azul from "../assets/images/azul.jpeg";
 import camioneta from "../assets/images/camioneta.jpeg";
+import carro from "../assets/images/carro.png";
 
 function IndexPage() {
   const services = [
@@ -97,6 +98,58 @@ function IndexPage() {
                 Maiores nemo dolor cum, perferendis temporibus exercitationem
                 expedita odit ad!
               </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="min-h-screen bg-cover bg-center text-black flex items-center"
+        style={{ backgroundImage: `url(${fondoblanco})` }}
+      >
+        <div>
+          <div className="flex place-content-around h-full">
+            <div className="invisible lg:visible">
+              <img src={carro} className="w-[700px]" />
+            </div>
+            <div className="absolute mt-14 lg:static lg:mt-0">
+              <div className="flex flex-col gap-12">
+                <div className="flex items-center place-content-center">
+                  <div className="bg-myred w-16 h-16 rounded-full"></div>
+                  <div className="ml-3">
+                    <h3 className="text-myred text italic text-3xl">
+                      Lorem ipsum.
+                    </h3>
+                    <p className="lg:w-8/12 font-extralight text-sm">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Culpa, aliquid?
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center place-content-center">
+                  <div className="bg-myred w-16 h-16 rounded-full"></div>
+                  <div className="ml-3">
+                    <h3 className="text-myred text italic text-3xl">
+                      Lorem ipsum.
+                    </h3>
+                    <p className="lg:w-8/12 font-extralight text-sm">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Culpa, aliquid?
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center place-content-center">
+                  <div className="bg-myred w-16 h-16 rounded-full"></div>
+                  <div className="ml-3">
+                    <h3 className="text-myred text italic text-3xl">
+                      Lorem ipsum.
+                    </h3>
+                    <p className="lg:w-8/12 font-extralight text-sm">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Culpa, aliquid?
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
