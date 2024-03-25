@@ -1,7 +1,8 @@
 import React from "react";
-import ServiceCard from "../components/ServiceCard";
 import conductor from "../assets/images/conductor.jpg";
 import fondoblanco from "../assets/images/fondoblanco.jpeg";
+import azul from "../assets/images/azul.jpeg";
+import camioneta from "../assets/images/camioneta.jpeg";
 
 function IndexPage() {
   const services = [
@@ -29,15 +30,17 @@ function IndexPage() {
         style={{ backgroundImage: `url(${conductor})` }}
       >
         <div className="md:p-40 p-10 md:w-9/12">
-          <h2 className=" text-6xl font-bold">
-            Lorem ipsum dolor, sit amet consectetur{" "}
-            <span className="text-myred">adipisicing.</span>
-          </h2>
-          <h3 className="pt-8 text-lg md:w-8/12">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
-            nemo dolor cum, perferendis temporibus exercitationem expedita odit
-            ad!
-          </h3>
+          <div className="mt-14 sm:mt-20">
+            <h2 className=" text-6xl font-bold">
+              Lorem ipsum dolor, sit amet consectetur{" "}
+              <span className="text-myred">adipisicing.</span>
+            </h2>
+            <h3 className="pt-8 text-lg md:w-8/12">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
+              nemo dolor cum, perferendis temporibus exercitationem expedita
+              odit ad!
+            </h3>
+          </div>
         </div>
       </section>
       <section
@@ -77,18 +80,25 @@ function IndexPage() {
       </section>
       <section
         className="min-h-screen bg-cover bg-center text-white"
-        style={{ backgroundImage: `url(${conductor})` }}
+        style={{ backgroundImage: `url(${azul})` }}
       >
-        <div className="md:p-40 p-10 md:w-9/12">
-          <h2 className=" text-6xl font-bold">
-            Lorem ipsum dolor, sit amet consectetur{" "}
-            <span className="text-myred">adipisicing.</span>
-          </h2>
-          <h3 className="pt-8 text-lg md:w-8/12">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
-            nemo dolor cum, perferendis temporibus exercitationem expedita odit
-            ad!
-          </h3>
+        <div className="lg:p-40 p-10 lg:w-9/12">
+          <div className="mt-16 text-center lg:text-start">
+            <div className="absolute z-0 ml-[450px] -mt-12 invisible lg:visible">
+              <img src={camioneta} className="w-[600px]" />
+            </div>
+            <div className="relative z-20 mt-20 md:mt-36 lg:mt-0 text-black flex flex-col items-center place-content-center lg:items-start">
+              <h2 className="text-6xl font-bold">
+                Lorem ipsum dolor, sit amet consectetur{" "}
+                <span className="text-myred">adipisicing.</span>
+              </h2>
+              <h3 className="pt-8 text-lg lg:w-8/12">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maiores nemo dolor cum, perferendis temporibus exercitationem
+                expedita odit ad!
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
     </div>
