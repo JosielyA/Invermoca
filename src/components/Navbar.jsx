@@ -16,12 +16,16 @@ function Navbar() {
             <span>Home</span>
             <IoMdArrowDropdown className="size-4 ml-1" />
           </Link>
+          <Link to="/vehiculos" className="flex items-center">
+            <span>Vehiculos</span>
+            <IoMdArrowDropdown className="size-4 ml-1" />
+          </Link>
           <Link to="/servicios" className="flex items-center">
             <span>Servicios</span>
             <IoMdArrowDropdown className="size-4 ml-1" />
           </Link>
-          <Link to="/sobre-nosotros" className="flex items-center">
-            <span>Sobre nosotros</span>
+          <Link to="/ubicacion" className="flex items-center">
+            <span>Ubicacion</span>
             <IoMdArrowDropdown className="size-4 ml-1" />
           </Link>
         </div>

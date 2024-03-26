@@ -2,6 +2,9 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import IndexPage from "./pages/IndexPage";
+import Servicios from "./pages/Servicios";
+import Vehiculos from "./pages/Vehiculos";
+import Ubicacion from "./pages/Ubicacion";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <IndexPage />,
+      },
+      {
+        path: "/vehiculos",
+        element: <Vehiculos />,
+      },
+      {
+        path: "/servicios",
+        element: <Servicios />,
+      },
+      {
+        path: "/ubicacion",
+        element: <Ubicacion />,
       },
     ],
   },

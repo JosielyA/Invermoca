@@ -1,0 +1,40 @@
+[
+  {
+    "id": 0,
+    "nombre": "Mitsubishi Eclipse",
+    "foto": "",
+    "fotos": [],
+    "caracteristicas": [
+      "Ano 1999",
+      "Millas 104.000",
+      "Documentacion 3-2",
+      "Cauchos y bateria nueva",
+      "Dos juegos de llaves"
+    ]
+  },
+  {
+    "id": 1,
+    "nombre": "Mitsubishi Eclipse",
+    "foto": "",
+    "fotos": [],
+    "caracteristicas": [
+      "Ano 2017",
+      "Kilometraje 5.000",
+      "Dos juegos de llaves",
+      "Cauchos nuevos"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Mitsubishi Eclipse",
+    "foto": "",
+    "fotos": [],
+    "caracteristicas": [
+      "Ano 2016",
+      "138.000KM",
+      "Suspension Fox",
+      "Titulo 2-1",
+      "Dos juegos de llaves"
+    ]
+  }
+]

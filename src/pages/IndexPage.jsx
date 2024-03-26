@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import conductor from "../assets/images/conductor.jpg";
 import fondoblanco from "../assets/images/fondoblanco.jpeg";
 import azul from "../assets/images/azul.jpeg";
@@ -23,6 +24,7 @@ function IndexPage() {
       texto: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     },
   ];
+  const section4circles = [1, 2, 3];
 
   return (
     <div>
@@ -111,39 +113,47 @@ function IndexPage() {
             <div className="invisible lg:visible">
               <img src={carro} className="w-[700px]" />
             </div>
-            <div className="absolute mt-14 lg:static lg:mt-0">
-              <div className="flex flex-col gap-12">
+            <div className="absolute lg:static">
+              <div className="flex flex-col gap-12 p-5 lg:p-0 -mt-10 lg:-mt-0">
                 <div className="flex items-center place-content-center">
-                  <div className="bg-myred w-16 h-16 rounded-full"></div>
+                  <div className="flex flex-col items-center">
+                    <div className="bg-myred w-12 h-12 rounded-full"></div>
+                    <div className="bg-myred w-[1px] h-[65px] mt-[53px] absolute rounded-lg"></div>
+                  </div>
                   <div className="ml-3">
                     <h3 className="text-myred text italic text-3xl">
                       Lorem ipsum.
                     </h3>
-                    <p className="lg:w-8/12 font-extralight text-sm">
+                    <p className="w-8/12 font-extralight text-sm">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, aliquid?
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center place-content-center">
-                  <div className="bg-myred w-16 h-16 rounded-full"></div>
+                  <div className="flex flex-col items-center">
+                    <div className="bg-myred w-12 h-12 rounded-full"></div>
+                    <div className="bg-myred w-[1px] h-[65px] mt-[53px] absolute rounded-lg"></div>
+                  </div>
                   <div className="ml-3">
                     <h3 className="text-myred text italic text-3xl">
                       Lorem ipsum.
                     </h3>
-                    <p className="lg:w-8/12 font-extralight text-sm">
+                    <p className="w-8/12 font-extralight text-sm">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, aliquid?
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center place-content-center">
-                  <div className="bg-myred w-16 h-16 rounded-full"></div>
+                  <div>
+                    <div className="bg-myred w-12 h-12 rounded-full"></div>
+                  </div>
                   <div className="ml-3">
                     <h3 className="text-myred text italic text-3xl">
                       Lorem ipsum.
                     </h3>
-                    <p className="lg:w-8/12 font-extralight text-sm">
+                    <p className="w-8/12 font-extralight text-sm">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, aliquid?
                     </p>
@@ -154,6 +164,8 @@ function IndexPage() {
           </div>
         </div>
       </section>
+      <hr className="border-myred border-[3px] w-full absolute -mt-6" />
+      <Footer />
     </div>
   );
 }
