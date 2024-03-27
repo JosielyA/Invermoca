@@ -47,7 +47,7 @@ function IndexPage() {
         </div>
       </section>
       <section
-        className="min-h-screen bg-cover bg-center"
+        className="bg-cover bg-center pb-10"
         style={{ backgroundImage: `url(${fondoblanco})` }}
       >
         <div className="flex flex-col items-center p-5 text-center">
@@ -81,29 +81,36 @@ function IndexPage() {
           </div>
         </div>
       </section>
-      <section
-        className="min-h-screen bg-cover bg-center text-white"
-        style={{ backgroundImage: `url(${azul})` }}
+      <div
+        className="h-screen bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${azul})`,
+        }}
       >
-        <div className="lg:p-40 p-10 lg:w-9/12">
-          <div className="mt-16 text-center lg:text-start">
-            <div className="absolute z-0 ml-[450px] -mt-12 invisible lg:visible">
-              <img src={camioneta} className="w-[600px]" />
-            </div>
-            <div className="relative z-20 mt-20 md:mt-36 lg:mt-0 text-black flex flex-col items-center place-content-center lg:items-start">
-              <h2 className="text-6xl font-bold">
-                Lorem ipsum dolor, sit amet consectetur{" "}
-                <span className="text-myred">adipisicing.</span>
-              </h2>
-              <h3 className="pt-8 text-lg lg:w-8/12">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Maiores nemo dolor cum, perferendis temporibus exercitationem
-                expedita odit ad!
-              </h3>
+        <div className="absolute h-screen flex items-center place-content-end w-full">
+          <div>
+            <img
+              src={camioneta}
+              alt="Centered image"
+              className="w-[600px] object-cover invisible lg:visible"
+            />
+            <div className="absolute inset-0 flex items-center place-content-center lg:place-content-start text-center lg:text-start">
+              <div className="lg:pl-[210px] w-10/12">
+                <h2 className="text-6xl font-bold text-white w lg:w-7/12">
+                  Lorem ipsum, dolor sit amet
+                </h2>
+                <h2 className="text-6xl font-bold text-white">
+                  elit pasen <span className="text-myred">adipisicing.</span>
+                </h2>
+                <p className="text-white text-lg mt-5 lg:w-6/12">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  atque blanditiis ex deserunt itaque. Facere.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <section
         className="min-h-screen bg-cover bg-center text-black flex items-center"
         style={{ backgroundImage: `url(${fondoblanco})` }}

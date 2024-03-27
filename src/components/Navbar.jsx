@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/facebooklogo.png";
+import logo from "../assets/images/logo.png";
 import { FaCircleUser } from "react-icons/fa6";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
