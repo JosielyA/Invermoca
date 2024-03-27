@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  min-width: 455px;
+#root {
+  min-width: 500px;
 }

@@ -12,7 +12,7 @@ function Footer() {
   return (
     <div>
       <section
-        className="min-h-screen bg-cover bg-center flex flex-col p-10 items-center place-content-center"
+        className="min-h-screen bg-cover bg-center max-w-screen sm:max-w-none flex flex-col p-10 items-center place-content-center"
         style={{ backgroundImage: `url(${azul})` }}
       >
         <div className="flex flex-wrap lg:flex-nowrap gap-5 text-white lg:gap-32 items-center place-content-around w-full">

@@ -10,8 +10,8 @@ function Navbar() {
       <div className="navbarOne h-28 flex items-center place-content-center">
         <img src={logo} className=" w-48" />
       </div>
-      <div className="flex flex-wrap bg-darkblue h-20 items-center text-white text-sm font-medium uppercase justify-between">
-        <div className="flex gap-5 items-center place-content-center w-full md:w-auto md:ml-20">
+      <div className="flex flex-wrap bg-darkblue lg:h-20 p-2 lg:p-0 items-center text-white text-sm font-medium uppercase justify-between">
+        <div className="flex flex-wrap gap-5 items-center place-content-center w-full md:w-auto md:ml-20">
           <Link to="/" className="flex items-center">
             <span>Home</span>
             <IoMdArrowDropdown className="size-4 ml-1" />

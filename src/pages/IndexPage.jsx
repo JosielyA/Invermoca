@@ -34,11 +34,11 @@ function IndexPage() {
       >
         <div className="md:p-40 p-10 md:w-9/12">
           <div className="mt-14 sm:mt-20">
-            <h2 className=" text-6xl font-bold">
+            <h2 className="text-4xl lg:text-6xl font-bold">
               Lorem ipsum dolor, sit amet consectetur{" "}
               <span className="text-myred">adipisicing.</span>
             </h2>
-            <h3 className="pt-8 text-lg md:w-8/12">
+            <h3 className="pt-4 lg:pt-8 text-lg md:w-8/12">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
               nemo dolor cum, perferendis temporibus exercitationem expedita
               odit ad!
@@ -96,10 +96,10 @@ function IndexPage() {
             />
             <div className="absolute inset-0 flex items-center place-content-center lg:place-content-start text-center lg:text-start">
               <div className="lg:pl-[210px] w-10/12">
-                <h2 className="text-6xl font-bold text-white w lg:w-7/12">
+                <h2 className="text-3xl lg:text-6xl font-bold text-white w lg:w-7/12">
                   Lorem ipsum, dolor sit amet
                 </h2>
-                <h2 className="text-6xl font-bold text-white">
+                <h2 className="text-3xl lg:text-6xl font-bold text-white">
                   elit pasen <span className="text-myred">adipisicing.</span>
                 </h2>
                 <p className="text-white text-lg mt-5 lg:w-6/12">
@@ -120,7 +120,7 @@ function IndexPage() {
             <div className="invisible lg:visible">
               <img src={carro} className="w-[700px]" />
             </div>
-            <div className="absolute lg:static">
+            <div className="absolute min-w-max pl-16 lg:pl-0 lg:static">
               <div className="flex flex-col gap-12 p-5 lg:p-0 -mt-10 lg:-mt-0">
                 <div className="flex items-center place-content-center">
                   <div className="flex flex-col items-center">
