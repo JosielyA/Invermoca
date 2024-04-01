@@ -11,98 +11,87 @@ function IndexPage() {
     {
       imagen: conductor,
       titulo: "Autos",
-      texto: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      texto:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit asc eac es eavwvqwv acaevavwaev",
     },
     {
       imagen: conductor,
       titulo: "Repuestos",
-      texto: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      texto:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elitnsfe ewvf ewve vwrv r vf vd rv sv  ef e v",
     },
     {
       imagen: conductor,
       titulo: "Accesorios",
-      texto: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      texto:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit asc  sdcdsvds sdcsdds",
     },
   ];
-  const section4circles = [1, 2, 3];
 
   return (
     <div>
-      <section
-        className="min-h-screen bg-cover bg-center text-white"
-        style={{ backgroundImage: `url(${conductor})` }}
-      >
-        <div className="md:p-40 p-10 md:w-9/12">
-          <div className="mt-14 sm:mt-20">
-            <h2 className="text-4xl lg:text-6xl font-bold">
-              Lorem ipsum dolor, sit amet consectetur{" "}
-              <span className="text-myred">adipisicing.</span>
-            </h2>
-            <h3 className="pt-4 lg:pt-8 text-lg md:w-8/12">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
-              nemo dolor cum, perferendis temporibus exercitationem expedita
-              odit ad!
-            </h3>
-          </div>
+      <section className="relative w-full overflow-hidden ">
+        <img
+          src={conductor}
+          className="h-full w-full brightness-50 contrast-200 filter md:filter-none"
+        />
+        <div className="absolute top-[200px] m-5 flex -translate-y-full transform flex-col gap-2 text-center text-white md:top-[450px] md:gap-8 md:text-start lg:top-[550px]">
+          <h2 className="text-2xl font-bold md:w-7/12 md:text-6xl">
+            Lorem ipsum dolor, sit amet consectetur{" "}
+            <span className="text-myred">adipisicing.</span>
+          </h2>
+          <h3 className="text-lg md:w-5/12 ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
+            nemo dolor cum, perferendis temporibus exercitationem expedita odit
+            ad!
+          </h3>
         </div>
       </section>
-      <section
-        className="bg-cover bg-center pb-10"
-        style={{ backgroundImage: `url(${fondoblanco})` }}
-      >
-        <div className="flex flex-col items-center p-5 text-center">
-          <h2 className="text-6xl font-bold text-myred pt-10 px-5">
-            Lorem, ipsum.
-          </h2>
-          <h3 className="font-medium mt-4 text-lg md:w-6/12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ullam,
-            laborum eum porro illo blanditiis?
-          </h3>
-          <div className="flex flex-wrap gap-4 mt-5 place-content-center">
+      <section className="pt-10 md:p-14">
+        <div className="">
+          <div className="mb-10 flex place-content-center items-center text-center">
+            <div className="flex flex-col items-center gap-4">
+              <h2 className="text-3xl font-bold text-myred md:text-4xl">
+                Lorem, ipsum.
+              </h2>
+              <h3 className="w-11/12 md:w-6/12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+                ullam, laborum eum porro illo blanditiis? Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Explicabo, labore?
+              </h3>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 place-content-center items-center gap-10 p-6 sm:grid-cols-2 md:grid-cols-3">
             {services.map((service, i) => (
               <div
                 key={i}
-                className="h-full w-full lg:w-1/4 flex flex-col items-center shadow-md rounded-lg bg-white shadow-gray-400  "
+                className="flex h-[105%] flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:max-h-[430px] md:min-h-[430px]"
               >
-                <div>
-                  <img
-                    src={service.imagen}
-                    className="rounded-[40px] w-[400px] pt-8 px-8"
-                  />
+                <div className="flex place-content-center items-center">
+                  <img src={service.imagen} className="rounded-lg" />
                 </div>
-                <div className="w-8/12">
-                  <h2 className="text-4xl font-bold text-myred pt-3">
+                <div className="">
+                  <h2 className="mb-2 text-3xl font-bold text-myred">
                     {service.titulo}
                   </h2>
-                  <p className="font-medium text-lg pb-12">{service.texto}</p>
+                  <p className="">{service.texto}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <div
-        className="h-screen bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${azul})`,
-        }}
-      >
-        <div className="absolute h-screen flex items-center place-content-end w-full">
+      <div className="">
+        <div className="">
           <div>
-            <img
-              src={camioneta}
-              alt="Centered image"
-              className="w-[600px] object-cover invisible lg:visible"
-            />
-            <div className="absolute inset-0 flex items-center place-content-center lg:place-content-start text-center lg:text-start">
-              <div className="lg:pl-[210px] w-10/12">
-                <h2 className="text-3xl lg:text-6xl font-bold text-white w lg:w-7/12">
-                  Lorem ipsum, dolor sit amet
+            <img src={camioneta} alt="Centered image" className="" />
+            <div className="">
+              <div className="">
+                <h2 className="">Lorem ipsum, dolor sit amet</h2>
+                <h2 className="">
+                  elit pasen <span className="">adipisicing.</span>
                 </h2>
-                <h2 className="text-3xl lg:text-6xl font-bold text-white">
-                  elit pasen <span className="text-myred">adipisicing.</span>
-                </h2>
-                <p className="text-white text-lg mt-5 lg:w-6/12">
+                <p className="">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
                   atque blanditiis ex deserunt itaque. Facere.
                 </p>
@@ -111,56 +100,47 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <section
-        className="min-h-screen bg-cover bg-center text-black flex items-center"
-        style={{ backgroundImage: `url(${fondoblanco})` }}
-      >
+      <section className="">
         <div>
-          <div className="flex place-content-around h-full">
-            <div className="invisible lg:visible">
-              <img src={carro} className="w-[700px]" />
+          <div className="">
+            <div className="">
+              <img src={carro} className="" />
             </div>
-            <div className="absolute min-w-max pl-16 lg:pl-0 lg:static">
-              <div className="flex flex-col gap-28 p-5 lg:p-0 -mt-10 lg:-mt-0">
-                <div className="flex items-center place-content-center">
-                  <div className="flex flex-col items-center">
-                    <div className="bg-myred w-12 h-12 rounded-full"></div>
-                    <div className="bg-myred w-[1px] h-[65px] mr-40 rotate-90 absolute rounded-lg"></div>
+            <div className="">
+              <div className="">
+                <div className="">
+                  <div className="">
+                    <div className=""></div>
+                    <div className=""></div>
                   </div>
-                  <div className="ml-3">
-                    <h3 className="text-myred text italic text-3xl">
-                      Lorem ipsum.
-                    </h3>
-                    <p className="w-8/12 font-extralight text-sm">
+                  <div className="">
+                    <h3 className="">Lorem ipsum.</h3>
+                    <p className="">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, aliquid?
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center place-content-center">
-                  <div className="flex flex-col items-center">
-                    <div className="bg-myred w-12 h-12 rounded-full"></div>
-                    <div className="bg-myred w-[1px] h-[65px] mt-[53px] absolute rounded-lg"></div>
+                <div className="">
+                  <div className="">
+                    <div className=""></div>
+                    <div className=""></div>
                   </div>
-                  <div className="ml-3">
-                    <h3 className="text-myred text italic text-3xl">
-                      Lorem ipsum.
-                    </h3>
-                    <p className="w-8/12 font-extralight text-sm">
+                  <div className="">
+                    <h3 className="">Lorem ipsum.</h3>
+                    <p className="">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, aliquid?
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center place-content-center">
+                <div className="">
                   <div>
-                    <div className="bg-myred w-12 h-12 rounded-full"></div>
+                    <div className=""></div>
                   </div>
-                  <div className="ml-3">
-                    <h3 className="text-myred text italic text-3xl">
-                      Lorem ipsum.
-                    </h3>
-                    <p className="w-8/12 font-extralight text-sm">
+                  <div className="">
+                    <h3 className="">Lorem ipsum.</h3>
+                    <p className="">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Culpa, aliquid?
                     </p>
@@ -171,7 +151,7 @@ function IndexPage() {
           </div>
         </div>
       </section>
-      <hr className="border-myred border-[3px] w-full absolute -mt-6" />
+      <div className="h-2 w-full border-myred" />
       <Footer />
     </div>
   );

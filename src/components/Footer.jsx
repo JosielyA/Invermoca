@@ -12,7 +12,7 @@ function Footer() {
   return (
     <div>
       <section
-        className="min-h-screen bg-cover bg-center max-w-screen sm:max-w-none flex flex-col p-10 items-center place-content-center"
+        className="min-h-screen bg-cover bg-center max-w-screen sm:max-w-none flex flex-col items-center place-content-center"
         style={{ backgroundImage: `url(${azul})` }}
       >
         <div className="flex flex-wrap lg:flex-nowrap gap-5 text-white lg:gap-32 items-center place-content-around w-full">
@@ -49,12 +49,12 @@ function Footer() {
                   <input
                     type="text"
                     placeholder="Nombre"
-                    className="bg-white py-4 px-4 italic placeholder-gray-500 font-semibold"
+                    className="bg-white p-2 md:py-4 md:px-4 italic placeholder-gray-500 font-semibold"
                   />
                   <input
                     type="text"
                     placeholder="Apellido"
-                    className="bg-white py-4 px-4 italic placeholder-gray-500 font-semibold"
+                    className="bg-white p-2 md:py-4 md:px-4 italic placeholder-gray-500 font-semibold"
                   />
                 </div>
                 <div className="flex gap-4">
@@ -62,18 +62,18 @@ function Footer() {
                     <input
                       type="text"
                       placeholder="Numero"
-                      className="bg-white py-4 px-4 italic placeholder-gray-500 font-semibold"
+                      className="bg-white p-2 md:py-4 md:px-4 italic placeholder-gray-500 font-semibold"
                     />
                     <input
                       type="text"
                       placeholder="Correo"
-                      className="bg-white py-4 px-4 italic placeholder-gray-500 font-semibold"
+                      className="bg-white p-2 md:py-4 md:px-4 italic placeholder-gray-500 font-semibold"
                     />
                   </div>
                   <div>
                     <textarea
                       placeholder="Mensaje"
-                      className="bg-white py-4 px-4 italic placeholder-gray-500 font-semibold h-full"
+                      className="bg-white p-2 md:py-4 md:px-4 italic placeholder-gray-500 font-semibold h-full"
                     ></textarea>
                   </div>
                 </div>
