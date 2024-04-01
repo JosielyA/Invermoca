@@ -121,11 +121,11 @@ function IndexPage() {
               <img src={carro} className="w-[700px]" />
             </div>
             <div className="absolute min-w-max pl-16 lg:pl-0 lg:static">
-              <div className="flex flex-col gap-12 p-5 lg:p-0 -mt-10 lg:-mt-0">
+              <div className="flex flex-col gap-28 p-5 lg:p-0 -mt-10 lg:-mt-0">
                 <div className="flex items-center place-content-center">
                   <div className="flex flex-col items-center">
                     <div className="bg-myred w-12 h-12 rounded-full"></div>
-                    <div className="bg-myred w-[1px] h-[65px] mt-[53px] absolute rounded-lg"></div>
+                    <div className="bg-myred w-[1px] h-[65px] mr-40 rotate-90 absolute rounded-lg"></div>
                   </div>
                   <div className="ml-3">
                     <h3 className="text-myred text italic text-3xl">

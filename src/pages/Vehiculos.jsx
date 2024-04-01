@@ -172,8 +172,8 @@ function Vehiculos() {
             animi veniam!
           </p>
         </div>
-        <div className="h-1 w-[2000px] bg-myred -mb-10"></div>
       </section>
+      <div className=" absolute h-1 w-full -mt-5 bg-myred -mb-10"></div>
       <Footer />
     </div>
   );
