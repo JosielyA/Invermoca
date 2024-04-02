@@ -6,6 +6,7 @@ export default {
       colors: {
         darkblue: "#0a3244",
         myred: "#ff3547",
+        whats: "#25D366",
       },
     },
   },

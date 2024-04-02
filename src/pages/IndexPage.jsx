@@ -5,6 +5,8 @@ import fondoblanco from "../assets/images/fondoblanco.jpeg";
 import azul from "../assets/images/azul.jpeg";
 import camioneta from "../assets/images/camioneta.jpeg";
 import carro from "../assets/images/carro.png";
+import { ImWhatsapp } from "react-icons/im";
+import { FaCartPlus } from "react-icons/fa";
 
 function IndexPage() {
   const services = [
@@ -35,7 +37,7 @@ function IndexPage() {
           src={conductor}
           className="h-full w-full brightness-50 contrast-200 filter md:filter-none"
         />
-        <div className="absolute top-[200px] m-5 flex -translate-y-full transform flex-col gap-2 text-center text-white md:top-[450px] md:gap-8 md:text-start lg:top-[550px]">
+        <div className="absolute top-[200px] m-5 flex -translate-y-full transform flex-col gap-2 text-center text-white md:left-[100px] md:top-[450px] md:gap-8 md:text-start lg:top-[550px]">
           <h2 className="text-2xl font-bold md:w-7/12 md:text-6xl">
             Lorem ipsum dolor, sit amet consectetur{" "}
             <span className="text-myred">adipisicing.</span>
@@ -81,70 +83,101 @@ function IndexPage() {
           </div>
         </div>
       </section>
-      <div className="">
-        <div className="">
-          <div>
-            <img src={camioneta} alt="Centered image" className="" />
-            <div className="">
-              <div className="">
-                <h2 className="">Lorem ipsum, dolor sit amet</h2>
-                <h2 className="">
-                  elit pasen <span className="">adipisicing.</span>
-                </h2>
-                <p className="">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                  atque blanditiis ex deserunt itaque. Facere.
-                </p>
-              </div>
+      <div
+        className="w-full overflow-hidden bg-cover bg-center sm:h-[400px] lg:h-screen"
+        style={{ backgroundImage: `url(${azul})` }}
+      >
+        <div className="flex h-full items-center">
+          <div className="absolute flex place-content-center bg-black/40 p-4 text-center text-white backdrop-blur-sm md:backdrop-blur-0 lg:ml-[8rem] lg:bg-transparent lg:text-start">
+            <div className="w-full">
+              <h2 className="text-3xl font-bold drop-shadow-lg lg:w-6/12 lg:text-[80px] lg:leading-[75px]">
+                Lorem Ipsum dolor sit amet
+              </h2>
+              <h1 className="text-3xl font-bold drop-shadow-lg lg:w-full lg:text-[80px] lg:leading-[75px]">
+                elit <span className="text-myred">consectetuer</span>
+              </h1>
+              <p className="mt-4 text-lg lg:w-[40%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                posuere at massa ac convallis. Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit. Iste, qui.
+              </p>
             </div>
+          </div>
+          <div className="flex w-full place-content-center md:place-content-end">
+            <img
+              src={camioneta}
+              alt="Image on the right"
+              className="w-11/12 object-cover sm:w-6/12"
+            />
           </div>
         </div>
       </div>
       <section className="">
-        <div>
-          <div className="">
-            <div className="">
-              <img src={carro} className="" />
+        <div className="flex place-content-center items-center lg:place-content-end lg:py-10">
+          <div className="invisible absolute left-0 w-1/2 lg:visible">
+            <img src={carro} />
+          </div>
+          <div className="flex flex-col gap-9  p-5 lg:w-1/2">
+            <div className="flex items-center gap-4">
+              <div className="h-14 w-14 rounded-full bg-myred"></div>
+              <div>
+                <h2 className="text-2xl font-semibold italic text-myred">
+                  Limpieza
+                </h2>
+                <p className="text-[13px] font-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <p className="text-base font-semibold">0000000000$</p>
+                <div className="flex gap-4">
+                  <button className="add1 boton">
+                    <FaCartPlus className="size-6" />
+                    <span>Agregar al carrito</span>
+                  </button>
+                  <button className="whats1 boton">
+                    <ImWhatsapp className="size-6" /> <span>Ir a Whatsapp</span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="">
-              <div className="">
-                <div className="">
-                  <div className="">
-                    <div className=""></div>
-                    <div className=""></div>
-                  </div>
-                  <div className="">
-                    <h3 className="">Lorem ipsum.</h3>
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Culpa, aliquid?
-                    </p>
-                  </div>
+            <div className="flex items-center gap-4">
+              <div className="h-14 w-14 rounded-full bg-myred"></div>
+              <div>
+                <h2 className="text-2xl font-semibold italic text-myred">
+                  Limpieza
+                </h2>
+                <p className="text-[13px] font-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <p className="text-base font-semibold">0000000000$</p>
+                <div className="flex gap-4">
+                  <button className="add1 boton">
+                    <FaCartPlus className="size-6" />
+                    <span>Agregar al carrito</span>
+                  </button>
+                  <button className="whats1 boton">
+                    <ImWhatsapp className="size-6" /> <span>Ir a Whatsapp</span>
+                  </button>
                 </div>
-                <div className="">
-                  <div className="">
-                    <div className=""></div>
-                    <div className=""></div>
-                  </div>
-                  <div className="">
-                    <h3 className="">Lorem ipsum.</h3>
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Culpa, aliquid?
-                    </p>
-                  </div>
-                </div>
-                <div className="">
-                  <div>
-                    <div className=""></div>
-                  </div>
-                  <div className="">
-                    <h3 className="">Lorem ipsum.</h3>
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Culpa, aliquid?
-                    </p>
-                  </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="h-14 w-14 rounded-full bg-myred"></div>
+              <div>
+                <h2 className="text-2xl font-semibold italic text-myred">
+                  Limpieza
+                </h2>
+                <p className="text-[13px] font-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <p className="text-base font-semibold">0000000000$</p>
+                <div className="flex gap-4">
+                  <button className="add1 boton">
+                    <FaCartPlus className="size-6" />
+                    <span>Agregar al carrito</span>
+                  </button>
+                  <button className="whats1 boton">
+                    <ImWhatsapp className="size-6" /> <span>Ir a Whatsapp</span>
+                  </button>
                 </div>
               </div>
             </div>
