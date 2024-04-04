@@ -43,8 +43,8 @@ function Footer() {
               </div>
             </div>
           </div>
-          <form className="flex flex-col gap-2 p-5 pt-0 lg:w-1/2 lg:p-16">
-            <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-2 p-5 pt-0 text-black lg:w-1/2 lg:gap-5 lg:p-16">
+            <div className="flex flex-col gap-2 lg:gap-5">
               <input className="footerInput" type="text" placeholder="Nombre" />
               <input
                 className="footerInput"
@@ -52,8 +52,8 @@ function Footer() {
                 placeholder="Apellido"
               />
             </div>
-            <div className="flex gap-2">
-              <div className="flex flex-col gap-2">
+            <div className="flex gap-2 lg:gap-5">
+              <div className="flex w-1/2 flex-col gap-2 lg:gap-5">
                 <input
                   className="footerInput"
                   type="text"
@@ -65,8 +65,8 @@ function Footer() {
                   placeholder="Correo"
                 />
               </div>
-              <input
-                className="footerInput"
+              <textarea
+                className="footerInput w-1/2 resize-none"
                 type="text"
                 placeholder="Mensaje"
               />
@@ -77,7 +77,7 @@ function Footer() {
                 <BsTwitter className="size-12 text-myred" />
               </div>
               <div className="flex items-center">
-                <button className="bg-myred px-12 py-3 text-2xl font-bold italic">
+                <button className="bg-myred px-12 py-3 text-2xl font-bold italic text-white">
                   Enviar
                 </button>
                 <MdKeyboardArrowRight className="size-12" />

@@ -49,7 +49,7 @@ function IndexPage() {
           </h3>
         </div>
       </section>
-      <section className="pt-10 md:p-14">
+      <section className="overflow-hidden py-10 md:p-14">
         <div className="">
           <div className="mb-10 flex place-content-center items-center text-center">
             <div className="flex flex-col items-center gap-4">
@@ -67,7 +67,7 @@ function IndexPage() {
             {services.map((service, i) => (
               <div
                 key={i}
-                className="flex h-[105%] flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:max-h-[430px] md:min-h-[430px]"
+                className="flex h-[105%] flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:max-h-[410px] md:min-h-[410px]"
               >
                 <div className="flex place-content-center items-center">
                   <img src={service.imagen} className="rounded-lg" />
@@ -84,7 +84,7 @@ function IndexPage() {
         </div>
       </section>
       <div
-        className="w-full overflow-hidden bg-cover bg-center sm:h-[400px] lg:h-screen"
+        className="w-full overflow-hidden bg-cover bg-center py-10 sm:h-[400px] lg:h-screen"
         style={{ backgroundImage: `url(${azul})` }}
       >
         <div className="flex h-full items-center">
@@ -113,7 +113,7 @@ function IndexPage() {
         </div>
       </div>
       <section className="">
-        <div className="flex place-content-center items-center lg:place-content-end lg:py-10">
+        <div className="flex place-content-center items-center py-10 lg:place-content-end">
           <div className="invisible absolute left-0 w-1/2 lg:visible">
             <img src={carro} />
           </div>

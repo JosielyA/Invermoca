@@ -1,18 +1,27 @@
-import React, { useEffect, useState } from "react";
-import carro from "../assets/images/carro.png";
-import carro2 from "../assets/images/carro2.png";
-import carro3 from "../assets/images/carro3.png";
-import carro4 from "../assets/images/carro4.png";
-import fondoblanco from "../assets/images/fondoblanco.jpeg";
-import azul from "../assets/images/azul.jpeg";
-import Footer from "../components/Footer";
-import concesionario from "../assets/images/concesionario.jpeg";
-import SliderMarcas from "../components/SliderMarcas";
-import CarList from "../components/CarList";
-import { Carousel } from "../components/Carousel";
+import React, { useEffect, useRef, useState } from "react";
+import CarCard from "./CarCard";
+import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
+import axios from "axios";
 
-function Vehiculos() {
+function CarList() {
   const [cars, setCars] = useState([]);
+  const [carsPerPage, setCarsPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const carsRef = useRef(null);
+
+  const productsQuantity = cars.length;
+  const lastIndex = currentPage * carsPerPage;
+  const firstIndex = lastIndex - carsPerPage;
+  const pagesQuantity = Math.ceil(productsQuantity / carsPerPage);
+
+  const pageNumbers = [];
+
+  for (let i = 1; i <= pagesQuantity; i++) {
+    pageNumbers.push(i);
+  }
+
   const carros = [
     {
       id: 0,
@@ -21,7 +30,7 @@ function Vehiculos() {
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
       price: 2000,
       image:
-        "https://multimarca.com.ve/wp-content/uploads/2023/06/COROLLA-SEG-AC446BP-DIAGONAL.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
     },
     {
       id: 1,
@@ -47,7 +56,7 @@ function Vehiculos() {
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
       price: 2000,
       image:
-        "https://multimarca.com.ve/wp-content/uploads/2023/06/COROLLA-SEG-AC446BP-DIAGONAL.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
     },
     {
       id: 4,
@@ -73,7 +82,7 @@ function Vehiculos() {
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
       price: 2000,
       image:
-        "https://multimarca.com.ve/wp-content/uploads/2023/06/COROLLA-SEG-AC446BP-DIAGONAL.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
     },
     {
       id: 7,
@@ -150,53 +159,76 @@ function Vehiculos() {
   const getCars = async () => {
     setCars(carros);
   };
+  const onPrevious = () => {
+    if (currentPage <= 1) {
+      setCurrentPage(pagesQuantity);
+      scrollToSection(carsRef);
+    } else {
+      setCurrentPage(currentPage - 1);
+      scrollToSection(carsRef);
+    }
+  };
+  const onNext = () => {
+    if (currentPage >= pagesQuantity) {
+      setCurrentPage(1);
+      scrollToSection(carsRef);
+    } else {
+      setCurrentPage(currentPage + 1);
+      scrollToSection(carsRef);
+    }
+  };
+  const onSpecificPage = (n) => {
+    setCurrentPage(n);
+    scrollToSection(carsRef);
+  };
+  const scrollToSection = (elementRef) => {
+    elementRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   useEffect(() => {
     getCars();
   }, []);
   return (
-    <div>
-      <section className="relative w-full overflow-hidden ">
-        <img
-          src={concesionario}
-          className="h-full w-full brightness-50 contrast-200 filter md:filter-none"
-        />
-        <div className="absolute top-[200px] flex -translate-y-full transform flex-col gap-2 text-center text-white md:left-[100px] md:top-[450px] md:gap-8 md:text-start ">
-          <h2 className="text-2xl font-bold md:w-7/12 md:text-6xl">
-            Lorem ipsum dolor, sit amet consectetur{" "}
-            <span className="text-myred">adipisicing.</span>
-          </h2>
-          <h3 className="text-lg md:w-5/12 ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
-            nemo dolor cum, perferendis temporibus exercitationem expedita odit
-            ad!
-          </h3>
-        </div>
-      </section>
-      <section className="absolute flex w-full place-content-center px-10 text-center md:-mt-5 lg:-mt-[120px] lg:px-20">
-        <div>
-          <div className="flex w-full flex-col items-center bg-gray-300">
-            <h2 className="pb-2 pt-5 text-3xl font-bold text-myred md:text-6xl">
-              consectetuer
-            </h2>
-            <p className="px-3 pb-6 md:w-8/12">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              non minima quos sequi veritatis autem numquam aut eaque
-              praesentium maxime ex ratione doloremque minus.
-            </p>
-            <SliderMarcas />
-          </div>
-        </div>
-      </section>
-      <section className="relative">
-        <CarList />
-      </section>
-      <div className="m-auto w-full">
-        <Carousel cars={cars} />
+    <div ref={carsRef}>
+      <div className="mx-10 mt-72 flex flex-col items-center gap-6 pt-5 sm:mt-60 md:mt-[18rem] md:pt-0 lg:mx-20 lg:mt-[12rem] xl:grid xl:grid-cols-2">
+        {cars
+          .map((car) => (
+            <CarCard
+              key={car.id}
+              image={car.image}
+              name={car.name}
+              description={car.description}
+              price={car.price}
+            />
+          ))
+          .slice(firstIndex, lastIndex)}
       </div>
-      <div className=" absolute -mb-10 -mt-5 h-1 w-full bg-myred"></div>
-      <Footer />
+      <div className="mx-10 mb-10 flex place-content-between items-center p-5">
+        <button>
+          <IoMdArrowDropleft
+            onClick={onPrevious}
+            className="size-10 md:size-12"
+          />
+        </button>
+        <div className="flex gap-1 md:gap-4">
+          {pageNumbers.map((nopage) => (
+            <button
+              key={nopage}
+              onClick={() => onSpecificPage(nopage)}
+              className={`flex h-10 w-10 place-content-center items-center rounded-md p-1 md:h-14 md:w-14 ${currentPage == nopage ? "bg-myred text-white" : "bg-gray-300  text-black"}`}
+            >
+              {nopage}
+            </button>
+          ))}
+        </div>
+        <button>
+          <IoMdArrowDropright onClick={onNext} className="size-10 md:size-12" />
+        </button>
+      </div>
     </div>
   );
 }
 
-export default Vehiculos;
+export default CarList;
