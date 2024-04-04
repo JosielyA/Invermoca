@@ -7,32 +7,32 @@ import { Link, Outlet } from "react-router-dom";
 function Navbar() {
   return (
     <div>
-      <div className="navbarOne h-28 flex items-center place-content-center">
+      <div className="navbarOne flex h-28 place-content-center items-center">
         <img src={logo} className=" w-48" />
       </div>
-      <div className="flex flex-wrap bg-darkblue lg:h-20 p-2 lg:p-0 items-center text-white text-sm font-medium uppercase justify-between">
-        <div className="flex flex-wrap gap-5 items-center place-content-center w-full md:w-auto md:ml-20">
+      <div className="flex flex-wrap items-center justify-between bg-darkblue p-2 text-sm font-medium uppercase text-white lg:h-20 lg:p-0">
+        <div className="flex w-full flex-wrap place-content-center items-center gap-5 md:ml-20 md:w-auto">
           <Link to="/" className="flex items-center">
             <span>Home</span>
-            <IoMdArrowDropdown className="size-4 ml-1" />
+            <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
           <Link to="/vehiculos" className="flex items-center">
-            <span>Vehiculos</span>
-            <IoMdArrowDropdown className="size-4 ml-1" />
+            <span>Vehículos</span>
+            <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
           <Link to="/servicios" className="flex items-center">
             <span>Servicios</span>
-            <IoMdArrowDropdown className="size-4 ml-1" />
+            <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
           <Link to="/ubicacion" className="flex items-center">
             <span>Ubicacion</span>
-            <IoMdArrowDropdown className="size-4 ml-1" />
+            <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
         </div>
-        <div className="justify-self-end flex items-center place-content-center w-full md:w-auto">
+        <div className="flex w-full place-content-center items-center justify-self-end md:w-auto">
           <Link>Iniciar Sesión</Link>
-          <Link className="bg-myred py-[5px] md:py-[10px] ml-6 pr-5 pl-2 rounded-l-full rounded-r-full md:rounded-r-none flex items-center">
-            <FaCircleUser className="size-7 mx-2" />
+          <Link className="ml-6 flex items-center rounded-l-full rounded-r-full bg-myred py-[5px] pl-2 pr-5 md:rounded-r-none md:py-[10px]">
+            <FaCircleUser className="mx-2 size-7" />
             <span>Registrate</span>
           </Link>
         </div>

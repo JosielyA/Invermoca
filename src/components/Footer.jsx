@@ -18,11 +18,14 @@ function Footer() {
         <div className="lg:flex lg:place-content-around lg:items-center">
           <div className="lg:w-1/2 lg:p-14">
             <div className="p-5 pt-8 lg:w-96">
-              <img src={logo} alt="" />
+              <img src={logo} />
             </div>
             <div className="fles place-content-center items-center px-5 text-center lg:text-start">
-              <h2 className="text-5xl font-bold lg:text-6xl">
-                Lorem Ipsum <span className="text-myred">dolor sit amet</span>
+              <h2 className="mb-2 text-5xl font-bold lg:text-5xl">
+                ¿Necesitas <span className="text-myred">ayuda</span>?
+              </h2>
+              <h2 className="text-lg">
+                Contáctanos para recibir asesoramiento personalizado.
               </h2>
             </div>
             <div className="flex flex-col gap-1 p-5">
