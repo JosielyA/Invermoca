@@ -25,7 +25,7 @@ function Navbar() {
             <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
           <Link to="/ubicacion" className="flex items-center">
-            <span>Ubicacion</span>
+            <span>Ubicación</span>
             <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
         </div>
