@@ -65,7 +65,7 @@ function IndexPage() {
             {services.map((service, i) => (
               <div
                 key={i}
-                className="flex h-[105%] flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:max-h-[410px] md:min-h-[410px]"
+                className="flex h-[105%] flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:max-h-[360px] md:min-h-[360px] xl:max-h-[400px] xl:min-h-[400px]"
               >
                 <div className="flex place-content-center items-center">
                   <img src={service.imagen} className="rounded-lg" />
@@ -120,63 +120,75 @@ function IndexPage() {
           <div className="flex flex-col gap-9  p-5 lg:w-1/2">
             <div className="flex items-center gap-4">
               <div className="h-14 w-14 rounded-full bg-myred"></div>
-              <div>
+              <div className="w-9/12">
                 <h2 className="text-2xl font-semibold italic text-myred">
                   Limpieza
                 </h2>
                 <p className="text-[13px] font-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                  Pulilavado, lavado de chasis y motor, latoneria.
                 </p>
                 <p className="text-base font-semibold">0000000000$</p>
                 <div className="flex gap-4">
                   <button className="add1 boton">
                     <FaCartPlus className="size-6" />
-                    <span>Agregar al carrito</span>
+                    <span className="text-[0.7rem]">Agregar al carrito</span>
                   </button>
                   <button className="whats1 boton">
-                    <ImWhatsapp className="size-6" /> <span>Ir a Whatsapp</span>
+                    <ImWhatsapp className="size-6" />{" "}
+                    <span className="text-[0.6rem] md:text-[0.7rem]">
+                      Ir a Whatsapp
+                    </span>
                   </button>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="h-14 w-14 rounded-full bg-myred"></div>
-              <div>
+              <div className="w-9/12">
                 <h2 className="text-2xl font-semibold italic text-myred">
-                  Limpieza
+                  Servicios de mecánica
                 </h2>
-                <p className="text-[13px] font-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                <p className="text-[13px] font-thin md:w-7/12">
+                  Ligera y pesada: amortiguación, servicio de inyectores,
+                  meanica ligera y pesada.
                 </p>
                 <p className="text-base font-semibold">0000000000$</p>
                 <div className="flex gap-4">
                   <button className="add1 boton">
                     <FaCartPlus className="size-6" />
-                    <span>Agregar al carrito</span>
+                    <span className="text-[0.6rem] md:text-[0.7rem]">
+                      Agregar al carrito
+                    </span>
                   </button>
                   <button className="whats1 boton">
-                    <ImWhatsapp className="size-6" /> <span>Ir a Whatsapp</span>
+                    <ImWhatsapp className="size-6" />{" "}
+                    <span className="text-[0.6rem] md:text-[0.7rem]">
+                      Ir a Whatsapp
+                    </span>
                   </button>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="h-14 w-14 rounded-full bg-myred"></div>
-              <div>
+              <div className="w-9/12">
                 <h2 className="text-2xl font-semibold italic text-myred">
-                  Limpieza
+                  Pintura automotríz
                 </h2>
-                <p className="text-[13px] font-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
-                </p>
+
                 <p className="text-base font-semibold">0000000000$</p>
                 <div className="flex gap-4">
                   <button className="add1 boton">
                     <FaCartPlus className="size-6" />
-                    <span>Agregar al carrito</span>
+                    <span className="text-[0.6rem] md:text-[0.7rem]">
+                      Agregar al carrito
+                    </span>
                   </button>
                   <button className="whats1 boton">
-                    <ImWhatsapp className="size-6" /> <span>Ir a Whatsapp</span>
+                    <ImWhatsapp className="size-6" />{" "}
+                    <span className="text-[0.6rem] md:text-[0.7rem]">
+                      Ir a Whatsapp
+                    </span>
                   </button>
                 </div>
               </div>
