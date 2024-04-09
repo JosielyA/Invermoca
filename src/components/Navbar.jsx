@@ -38,72 +38,78 @@ function Navbar({
       </div>
       <div className="flex flex-wrap items-center justify-around bg-darkblue p-2 text-sm font-medium uppercase text-white lg:h-20 lg:justify-between lg:p-0">
         <div className="flex w-full flex-wrap place-content-center items-center gap-5 md:ml-20 md:w-auto">
-          <button
-            onClick={() => setActive((prev) => !prev)}
-            className={`${countProducts > 0 ? "place-content-end text-black " : "h-[3rem] w-[3rem] place-content-center rounded-full bg-myred "} absolute left-2 top-2 z-50 -mt-1 flex w-10`}
-          >
-            <BsCart4 className={`relative h-[2.7em] w-[2.7rem] self-center`} />
-            <div
-              className={`${countProducts > 0 ? "" : "hidden"} ${active ? "bg-white text-black" : "bg-myred text-white"} absolute -mb-1 -mr-1 flex h-[1.3rem] w-[1.3rem] place-content-center items-center self-end rounded-full`}
-            >
-              <span className="text-sm">{countProducts}</span>
-            </div>
-          </button>
           <div
-            className={`${active ? "" : "hidden"} absolute left-[1.8rem] top-[0.5rem] z-10 flex`}
+            className={`${countProducts > 0 ? "place-content-end" : "place-content-center"} fixed left-2 top-2 z-50 -mt-1 flex`}
           >
-            <div className="-mr-[18rem] mt-[1rem] flex min-w-[20rem]  flex-col items-center rounded-md bg-myred p-2 normal-case text-white">
-              <h2 className="p-2 text-lg font-bold uppercase">Carrito</h2>
-              <div className="flex w-full flex-col gap-3 p-2">
-                {allProductsinCart.length ? (
-                  <div>
-                    {allProductsinCart.map((product, i) => (
-                      <div
-                        key={product.id}
-                        className="flex place-content-around items-center"
-                      >
-                        <h2 className="w-1/6">{product.quantity}</h2>
-                        <h2 className="w-2/5">{product.name}</h2>
-                        <h2 className="w-2/6">
+            <button
+              onClick={() => setActive((prev) => !prev)}
+              className={`${countProducts > 0 ? "place-content-end text-black " : "h-[3rem] w-[3rem] place-content-center rounded-full bg-myred "} z-20 flex w-10`}
+            >
+              <BsCart4
+                className={`relative h-[2.7em] w-[2.7rem] self-center`}
+              />
+              <div
+                className={`${countProducts > 0 ? "" : "hidden"} ${active ? "bg-white text-black" : "bg-myred text-white"} absolute -mb-1 -mr-1 flex h-[1.3rem] w-[1.3rem] place-content-center items-center self-end rounded-full`}
+              >
+                <span className="text-sm">{countProducts}</span>
+              </div>
+            </button>
+            <div
+              className={`${active ? "" : "hidden"} absolute left-[1.8rem] top-[0.5rem] z-10 flex`}
+            >
+              <div className="-mr-[18rem] mt-[1rem] flex min-w-[20rem]  flex-col items-center rounded-md bg-myred p-2 normal-case text-white">
+                <h2 className="p-2 text-lg font-bold uppercase">Carrito</h2>
+                <div className="flex w-full flex-col gap-3 p-2">
+                  {allProductsinCart.length ? (
+                    <div>
+                      {allProductsinCart.map((product, i) => (
+                        <div
+                          key={product.id}
+                          className="flex place-content-around items-center"
+                        >
+                          <h2 className="w-1/6">{product.quantity}</h2>
+                          <h2 className="w-2/5">{product.name}</h2>
+                          <h2 className="w-2/6">
+                            {new Intl.NumberFormat("en-US", {
+                              style: "currency",
+                              currency: "USD",
+                            }).format(product.price)}
+                          </h2>
+                          <button
+                            className="w-1/12"
+                            onClick={() => onDelete(product)}
+                          >
+                            <FaXmark className="size-6" />
+                          </button>
+                        </div>
+                      ))}
+                      <div className="mt-2 flex flex-col items-center gap-2">
+                        <h2 className="">
+                          Total:{" "}
                           {new Intl.NumberFormat("en-US", {
                             style: "currency",
                             currency: "USD",
-                          }).format(product.price)}
+                          }).format(total)}
                         </h2>
-                        <button
-                          className="w-1/12"
-                          onClick={() => onDelete(product)}
-                        >
-                          <FaXmark className="size-6" />
-                        </button>
-                      </div>
-                    ))}
-                    <div className="mt-2 flex flex-col items-center gap-2">
-                      <h2 className="">
-                        Total:{" "}
-                        {new Intl.NumberFormat("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        }).format(total)}
-                      </h2>
-                      <div className="flex gap-2">
-                        <button
-                          onClick={onClearCart}
-                          className="rounded-md bg-gray-300 px-4 py-2 text-black hover:bg-black hover:text-white"
-                        >
-                          Vaciar carrito
-                        </button>
-                        <button className="text-bwhite rounded-md bg-green-500 px-4 py-2 transition-transform duration-100 ease-linear hover:scale-110">
-                          Comprar
-                        </button>
+                        <div className="flex gap-2">
+                          <button
+                            onClick={onClearCart}
+                            className="rounded-md bg-gray-300 px-4 py-2 text-black hover:bg-black hover:text-white"
+                          >
+                            Vaciar carrito
+                          </button>
+                          <button className="text-bwhite rounded-md bg-green-500 px-4 py-2 transition-transform duration-100 ease-linear hover:scale-110">
+                            Comprar
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ) : (
-                  <div className="flex place-content-center items-center">
-                    <h2>No hay productos.</h2>
-                  </div>
-                )}
+                  ) : (
+                    <div className="flex place-content-center items-center">
+                      <h2>No hay productos.</h2>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

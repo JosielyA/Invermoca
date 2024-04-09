@@ -131,3 +131,24 @@ export const carros = [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
   },
 ];
+
+export const servicios = [
+  {
+    id: -1,
+    name: "Limpieza",
+    description: "Pulilavado, lavado de chasis y motor, latoneria.",
+    price: 500,
+  },
+  {
+    id: -2,
+    name: "Servicios de mecánica",
+    description:
+      "Ligera y pesada: amortiguación, servicio de inyectores, mecanica ligera y pesada.",
+    price: 200,
+  },
+  {
+    id: -3,
+    name: "Pintura automotríz",
+    price: 100,
+  },
+];

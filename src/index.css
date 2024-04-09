@@ -18,4 +18,7 @@
   .footerInput {
     @apply w-full px-4 py-3 text-base font-bold italic placeholder-gray-600 lg:px-6 lg:py-5;
   }
+  .valid {
+    @apply text-white;
+  }
 }

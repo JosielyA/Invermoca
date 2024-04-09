@@ -11,7 +11,7 @@ function Ubicacion() {
         style={{ backgroundImage: `url(${fondoRojo})` }}
       >
         <div className="flex flex-col items-center gap-4 lg:w-5/12">
-          <h2 className="text-4xl font-bold">¿Dnde estamos?</h2>
+          <h2 className="text-4xl font-bold">¿Dónde estamos?</h2>
           <div className="flex w-full gap-4">
             <button className="w-full rounded-[5px] bg-white px-10 py-3">
               <div className="flex place-content-center items-center gap-2">
@@ -22,7 +22,7 @@ function Ubicacion() {
             <button className="w-full rounded-[5px] bg-white px-10 py-3">
               <div className="flex place-content-center items-center gap-2">
                 <IoLocationSharp className="text-myred" />
-                <span className="uppercase text-black">Circv. 1</span>
+                <span className="uppercase text-black">Sede Circv. 1</span>
               </div>
             </button>
           </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 import azul from "../assets/images/azul.jpeg";
 import { IoLocationSharp } from "react-icons/io5";
@@ -7,8 +7,49 @@ import { IoIosMail } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
+import { useFormik } from "formik";
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.nombre) {
+    errors.nombre = "Requerido";
+  } else if (values.nombre.length > 15) {
+    errors.nombre = "Debe ser de 15 caracteres o menos.";
+  }
+  if (!values.telefono) {
+    errors.telefono = "Requerido";
+  }
+  if (!values.mensaje) {
+    errors.mensaje = "Requerido";
+  }
+
+  if (values.apellido.length > 15) {
+    errors.apellido = "Debe ser de 15 caracteres o menos.";
+  }
+
+  if (!values.correo) {
+    errors.correo = "Requerido";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.correo)) {
+    errors.correo = "Correo electronico invalido.";
+  }
+
+  return errors;
+};
 
 function Footer() {
+  const formik = useFormik({
+    initialValues: {
+      nombre: "",
+      apellido: "",
+      telefono: "",
+      correo: "",
+      mensaje: "",
+    },
+    validate,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
     <div>
       <section
@@ -46,33 +87,79 @@ function Footer() {
               </div>
             </div>
           </div>
-          <form className="flex flex-col gap-2 p-5 pt-0 text-black lg:w-1/2 lg:gap-5 lg:p-16">
+          <form
+            onSubmit={formik.handleSubmit}
+            className="flex flex-col gap-2 p-5 pt-0 text-black lg:w-1/2 lg:gap-5 lg:p-16"
+          >
             <div className="flex flex-col gap-2 lg:gap-5">
-              <input className="footerInput" type="text" placeholder="Nombre" />
               <input
+                id="nombre"
+                name="nombre"
+                onChange={formik.handleChange}
+                value={formik.values.nombre}
+                className="footerInput"
+                type="text"
+                placeholder="Nombre"
+              />
+              {formik.errors.nombre ? (
+                <div className="valid">{formik.errors.nombre}</div>
+              ) : null}
+
+              <input
+                id="apellido"
+                name="apellido"
+                onChange={formik.handleChange}
+                value={formik.values.apellido}
                 className="footerInput"
                 type="text"
                 placeholder="Apellido"
               />
+              {formik.errors.apellido ? (
+                <div className="valid">{formik.errors.apellido}</div>
+              ) : null}
             </div>
             <div className="flex gap-2 lg:gap-5">
               <div className="flex w-1/2 flex-col gap-2 lg:gap-5">
                 <input
+                  id="telefono"
+                  name="telefono"
+                  onChange={formik.handleChange}
+                  value={formik.values.telefono}
                   className="footerInput"
-                  type="text"
+                  type="number"
                   placeholder="Telefono"
                 />
+                {formik.errors.telefono ? (
+                  <div className="valid">{formik.errors.telefono}</div>
+                ) : null}
+
                 <input
+                  id="correo"
+                  name="correo"
+                  onChange={formik.handleChange}
+                  value={formik.values.correo}
                   className="footerInput"
                   type="text"
                   placeholder="Correo"
                 />
+                {formik.errors.correo ? (
+                  <div className="valid">{formik.errors.correo}</div>
+                ) : null}
               </div>
-              <textarea
-                className="footerInput w-1/2 resize-none"
-                type="text"
-                placeholder="Mensaje"
-              />
+              <div className="w-1/2">
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  onChange={formik.handleChange}
+                  value={formik.values.mensaje}
+                  className={`footerInput w-full resize-none ${formik.errors.mensaje || formik.errors.telefono || formik.errors.correo ? "h-[80%]" : "h-full"}`}
+                  type="text"
+                  placeholder="Mensaje"
+                />
+                {formik.errors.mensaje ? (
+                  <div className="valid">{formik.errors.mensaje}</div>
+                ) : null}
+              </div>
             </div>
             <div className="flex place-content-between gap-4">
               <div className="flex items-center gap-2">

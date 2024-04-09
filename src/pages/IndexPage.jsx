@@ -7,8 +7,16 @@ import camioneta from "../assets/images/camioneta.jpeg";
 import carro from "../assets/images/carro.png";
 import { ImWhatsapp } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
+import { servicios } from "../data/carsData";
 
-function IndexPage() {
+function IndexPage({
+  allProductsinCart,
+  setAllProductsinCart,
+  total,
+  setTotal,
+  countProducts,
+  setCountProducts,
+}) {
   const services = [
     {
       imagen: conductor,
@@ -29,6 +37,26 @@ function IndexPage() {
         "Personaliza y mejora tu vehículo con nuestra amplia gama de accesorios.",
     },
   ];
+
+  const onAdd = (product) => {
+    const alreadyInProduct = allProductsinCart.find(
+      (item) => item.id === product.id,
+    );
+    if (alreadyInProduct) {
+      const products = allProductsinCart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item,
+      );
+      setTotal(total + alreadyInProduct.price * alreadyInProduct.quantity);
+      setCountProducts(countProducts + 1);
+      return setAllProductsinCart([...products]);
+    }
+    const newProduct = { ...product, quantity: 1 };
+    setTotal(total + product.price);
+    setCountProducts(countProducts + 1);
+    setAllProductsinCart([...allProductsinCart, newProduct]);
+  };
 
   return (
     <div>
@@ -122,14 +150,22 @@ function IndexPage() {
               <div className="h-14 w-14 rounded-full bg-myred"></div>
               <div className="w-9/12">
                 <h2 className="text-2xl font-semibold italic text-myred">
-                  Limpieza
+                  {servicios[0].name}
                 </h2>
                 <p className="text-[13px] font-thin">
-                  Pulilavado, lavado de chasis y motor, latoneria.
+                  {servicios[0].description}
                 </p>
-                <p className="text-base font-semibold">0000000000$</p>
+                <p className="text-base font-semibold">
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(servicios[0].price)}
+                </p>
                 <div className="flex gap-4">
-                  <button className="add1 boton">
+                  <button
+                    onClick={() => onAdd(servicios[0])}
+                    className="add1 boton"
+                  >
                     <FaCartPlus className="size-6" />
                     <span className="text-[0.7rem]">Agregar al carrito</span>
                   </button>
@@ -146,15 +182,22 @@ function IndexPage() {
               <div className="h-14 w-14 rounded-full bg-myred"></div>
               <div className="w-9/12">
                 <h2 className="text-2xl font-semibold italic text-myred">
-                  Servicios de mecánica
+                  {servicios[1].name}
                 </h2>
                 <p className="text-[13px] font-thin md:w-7/12">
-                  Ligera y pesada: amortiguación, servicio de inyectores,
-                  meanica ligera y pesada.
+                  {servicios[1].description}
                 </p>
-                <p className="text-base font-semibold">0000000000$</p>
+                <p className="text-base font-semibold">
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(servicios[1].price)}
+                </p>
                 <div className="flex gap-4">
-                  <button className="add1 boton">
+                  <button
+                    onClick={() => onAdd(servicios[1])}
+                    className="add1 boton"
+                  >
                     <FaCartPlus className="size-6" />
                     <span className="text-[0.6rem] md:text-[0.7rem]">
                       Agregar al carrito
@@ -173,12 +216,20 @@ function IndexPage() {
               <div className="h-14 w-14 rounded-full bg-myred"></div>
               <div className="w-9/12">
                 <h2 className="text-2xl font-semibold italic text-myred">
-                  Pintura automotríz
+                  {servicios[2].name}
                 </h2>
 
-                <p className="text-base font-semibold">0000000000$</p>
+                <p className="text-base font-semibold">
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(servicios[2].price)}
+                </p>
                 <div className="flex gap-4">
-                  <button className="add1 boton">
+                  <button
+                    onClick={() => onAdd(servicios[2])}
+                    className="add1 boton"
+                  >
                     <FaCartPlus className="size-6" />
                     <span className="text-[0.6rem] md:text-[0.7rem]">
                       Agregar al carrito
