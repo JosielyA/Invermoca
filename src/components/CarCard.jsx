@@ -21,7 +21,7 @@ function CarCard({
           ? { ...item, quantity: item.quantity + 1 }
           : item,
       );
-      setTotal(total + alreadyInProduct.price * alreadyInProduct.quantity);
+      setTotal(total + alreadyInProduct.price);
       setCountProducts(countProducts + 1);
       return setAllProductsinCart([...products]);
     }

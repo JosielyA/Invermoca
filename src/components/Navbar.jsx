@@ -37,7 +37,7 @@ function Navbar({
         <img src={logo} className=" w-48" />
       </div>
       <div className="flex flex-wrap items-center justify-around bg-darkblue p-2 text-sm font-medium uppercase text-white lg:h-20 lg:justify-between lg:p-0">
-        <div className="flex w-full flex-wrap place-content-center items-center gap-5 md:ml-20 md:w-auto">
+        <div className="flex w-full flex-wrap place-content-center items-center gap-2 md:ml-20 md:w-auto lg:gap-5">
           <div
             className={`${countProducts > 0 ? "place-content-end" : "place-content-center"} fixed left-2 top-2 z-50 -mt-1 flex`}
           >
@@ -115,6 +115,10 @@ function Navbar({
           </div>
           <Link to="/" className="flex items-center">
             <span>Home</span>
+            <IoMdArrowDropdown className="ml-1 size-4" />
+          </Link>
+          <Link to="/catalogo" className="flex items-center">
+            <span>Catalogo</span>
             <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
           <Link to="/vehiculos" className="flex items-center">

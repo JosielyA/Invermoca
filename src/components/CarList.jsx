@@ -83,7 +83,9 @@ function CarList({
           ))
           .slice(firstIndex, lastIndex)}
       </div>
-      <div className="mx-10 mb-10 flex place-content-between items-center p-5">
+      <div
+        className={`${cars.length > 6 ? "" : "hidden"} mx-10 mb-10 flex place-content-between items-center p-5`}
+      >
         <button>
           <IoMdArrowDropleft
             onClick={onPrevious}

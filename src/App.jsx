@@ -6,6 +6,7 @@ import IndexPage from "./pages/IndexPage";
 import Servicios from "./pages/Servicios";
 import Vehiculos from "./pages/Vehiculos";
 import Ubicacion from "./pages/Ubicacion";
+import PricesPage from "./pages/PricesPage";
 import { useState } from "react";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           }
         />
         <Route path="/servicios" element={<Servicios />} />
+        <Route path="/catalogo" element={<PricesPage />} />
         <Route
           path="/vehiculos"
           element={

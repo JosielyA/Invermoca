@@ -134,20 +134,20 @@ export const carros = [
 
 export const servicios = [
   {
-    id: -1,
+    id: 1000,
     name: "Limpieza",
     description: "Pulilavado, lavado de chasis y motor, latoneria.",
     price: 500,
   },
   {
-    id: -2,
+    id: 2000,
     name: "Servicios de mecánica",
     description:
       "Ligera y pesada: amortiguación, servicio de inyectores, mecanica ligera y pesada.",
     price: 200,
   },
   {
-    id: -3,
+    id: 3000,
     name: "Pintura automotríz",
     price: 100,
   },
