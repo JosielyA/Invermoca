@@ -32,17 +32,23 @@ function CarCard({
   };
 
   return (
-    <div className="flex max-w-[400px] flex-col-reverse items-start bg-gray-300 shadow-md shadow-black md:max-w-[600px] md:flex-row">
-      <div className="h-[50%] w-full p-5 text-start md:h-full md:w-1/2">
-        <h2 className="text-base font-bold uppercase text-myred">{car.name}</h2>
-        <p className="text-[10px] font-light uppercase">{car.description}</p>
-        <p>
-          {new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-          }).format(car.price)}
-        </p>
-        <div className="mt-3 flex h-full place-content-end items-center gap-2">
+    <div className="flex w-[44%] min-w-64 flex-col-reverse items-start bg-gray-300 shadow-md shadow-black md:flex-row">
+      <div className="md:w/1/2 flex h-1/2 w-full flex-col place-content-between md:h-full">
+        <div className="h-2/3 p-3 md:p-5">
+          <h2 className="text-base font-bold uppercase text-myred lg:text-xl">
+            {car.name}
+          </h2>
+          <p className="text-[10px] font-light uppercase lg:text-[12px]">
+            {car.description}
+          </p>
+          <p className="font-medium">
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(car.price)}
+          </p>
+        </div>
+        <div className="flex items-center gap-2 self-end p-3 md:p-5">
           <button className="rounded-sm bg-myred px-2 py-1 text-sm font-bold uppercase text-white">
             Ver Fotos
           </button>

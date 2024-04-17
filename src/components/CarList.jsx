@@ -67,7 +67,7 @@ function CarList({
   }, []);
   return (
     <div ref={carsRef}>
-      <div className="mx-10 mt-72 flex flex-col items-center gap-6 pt-5 sm:mt-60 md:mt-[18rem] md:pt-0 lg:mx-20 lg:mt-[12rem] lg:grid lg:grid-cols-2">
+      <div className="mt-[12rem] flex flex-wrap place-content-center gap-7 pt-5 sm:mt-[15rem] md:mt-[19.8rem] md:pt-0  lg:mt-[12rem]">
         {cars
           .map((car) => (
             <CarCard

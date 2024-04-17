@@ -34,7 +34,7 @@ function Navbar({
   return (
     <div>
       <div className="navbarOne flex h-28 place-content-center items-center">
-        <img src={logo} className=" w-48" />
+        <img src={logo} className="w-64" />
       </div>
       <div className="flex flex-wrap items-center justify-around bg-darkblue p-2 text-sm font-medium uppercase text-white lg:h-20 lg:justify-between lg:p-0">
         <div className="flex w-full flex-wrap place-content-center items-center gap-2 md:ml-20 md:w-auto lg:gap-5">
