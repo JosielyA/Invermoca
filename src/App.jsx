@@ -8,6 +8,7 @@ import Vehiculos from "./pages/Vehiculos";
 import Ubicacion from "./pages/Ubicacion";
 import PricesPage from "./pages/PricesPage";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [allProductsinCart, setAllProductsinCart] = useState([]);
@@ -23,6 +24,9 @@ function App() {
         countProducts={countProducts}
         setCountProducts={setCountProducts}
       />
+      <div>
+        <Toaster />
+      </div>
       <Routes>
         <Route
           path="/"

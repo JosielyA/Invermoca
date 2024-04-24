@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import logo from "../assets/images/logo.png";
 import azul from "../assets/images/azul.jpeg";
+
 import { IoLocationSharp } from "react-icons/io5";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { IoIosMail } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
+import { SiMercadopago } from "react-icons/si";
+import { IoClose } from "react-icons/io5";
+
 import { useFormik } from "formik";
+import toast from "react-hot-toast";
 
 const validate = (values) => {
   const errors = {};
@@ -37,6 +44,8 @@ const validate = (values) => {
 };
 
 function Footer() {
+  const [loading, setLoading] = useState(false);
+  const formulario = useRef();
   const formik = useFormik({
     initialValues: {
       nombre: "",
@@ -46,8 +55,30 @@ function Footer() {
       mensaje: "",
     },
     validate,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, { resetForm }) => {
+      setLoading(true);
+      toast.promise(
+        emailjs
+          .sendForm("service_u7qpjj9", "template_bmo4nsq", values, {
+            publicKey: "RGekvYqfLQqQrBBiq",
+          })
+          .then(
+            () => {
+              resetForm();
+              setLoading(false);
+            },
+            (error) => {
+              console.log(error);
+              setLoading(false);
+              throw new Error(error);
+            },
+          ),
+        {
+          loading: "Loading",
+          success: "Mensaje enviado correctamente.",
+          error: "No se ha podido enviar tu mensaje.",
+        },
+      );
     },
   });
   return (
@@ -88,6 +119,7 @@ function Footer() {
             </div>
           </div>
           <form
+            ref={formulario}
             onSubmit={formik.handleSubmit}
             className="flex flex-col gap-2 p-5 pt-0 text-black lg:w-1/2 lg:gap-5 lg:p-16"
           >
@@ -163,14 +195,28 @@ function Footer() {
             </div>
             <div className="flex place-content-between gap-4">
               <div className="flex items-center gap-2">
-                <BsInstagram className="size-12 text-myred" />
-                <BsTwitter className="size-12 text-myred" />
+                <a
+                  href="https://www.instagram.com/invermoca/?hl=es-la"
+                  target="_blank"
+                >
+                  <BsInstagram className="size-12 text-myred" />
+                </a>
+                <a href="https://twitter.com/invermoca_MCBO" target="_blank">
+                  <BsTwitter className="size-12 text-myred" />
+                </a>
+                <a href="#">
+                  <SiMercadopago className="size-12 text-myred" />
+                </a>
               </div>
               <div className="flex items-center">
-                <button className="bg-myred px-12 py-3 text-2xl font-bold italic text-white">
+                <button
+                  type="submit"
+                  className="bg-myred px-12 py-3 text-2xl font-bold italic text-white disabled:bg-gray-400"
+                  disabled={loading}
+                >
                   Enviar
                 </button>
-                <MdKeyboardArrowRight className="size-12" />
+                <MdKeyboardArrowRight className="size-12 text-white" />
               </div>
             </div>
           </form>

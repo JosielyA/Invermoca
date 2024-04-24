@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import conductor from "../assets/images/backgrounds/DSC_0045.jpg";
 import vehiculos from "../assets/images/backgrounds/DSC_0083.jpg";
+import autonegro from "../assets/images/autonegro.png";
 import repuestos from "../assets/images/backgrounds/DSC_0469.jpg";
 import accesorios from "../assets/images/backgrounds/DSC_0357.jpg";
 import azul from "../assets/images/azul.jpeg";
@@ -143,109 +144,45 @@ function IndexPage({
         </div>
       </div>
       <section className="">
-        <div className="flex place-content-center items-center py-10 xl:min-h-screen xl:place-content-end">
+        <div className="flex max-h-[1080px] max-w-[1920px] place-content-center items-center py-10 xl:place-content-end">
           <div className="invisible absolute left-0 w-1/2 xl:visible ">
-            <img src={carro} className="xl:min-h-[80vh]" />
+            <img src={autonegro} className="xl:min-h-[70vh]" />
           </div>
-          <div className="flex flex-col place-content-around p-5 md:p-0 xl:min-h-[80vh] xl:w-[40%] xl:gap-5">
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-myred xl:h-20 xl:w-20"></div>
-              <div className="w-9/12">
-                <h2 className="text-2xl font-semibold italic text-myred xl:text-4xl">
-                  {servicios[0].name}
-                </h2>
-                <p className="text-[13px] font-thin xl:w-10/12 xl:text-lg">
-                  {servicios[0].description}
-                </p>
-                <p className="text-base font-semibold xl:text-xl">
-                  {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  }).format(servicios[0].price)}
-                </p>
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => onAdd(servicios[0])}
-                    className="add1 boton"
-                  >
-                    <FaCartPlus className="size-6" />
-                    <span className="text-[0.7rem]">Agregar al carrito</span>
-                  </button>
-                  <button className="whats1 boton">
-                    <ImWhatsapp className="size-6" />{" "}
-                    <span className="text-[0.6rem] md:text-[0.7rem]">
-                      Ir a Whatsapp
-                    </span>
-                  </button>
+          <div className="flex flex-col place-content-around gap-10 p-5 md:p-0 xl:min-h-[80vh] xl:w-[45%] 2xl:w-[40%]">
+            {servicios.map((service) => (
+              <div className="flex items-center gap-4">
+                <div className="h-14 w-14 rounded-full bg-myred xl:h-16 xl:w-16"></div>
+                <div className="w-9/12">
+                  <h2 className="text-2xl font-semibold italic text-myred xl:text-3xl">
+                    {service.name}
+                  </h2>
+                  <p className="text-[13px] font-thin xl:w-10/12 xl:text-base">
+                    {service.description}
+                  </p>
+                  <p className="text-base font-semibold xl:text-lg">
+                    {new Intl.NumberFormat("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    }).format(service.price)}
+                  </p>
+                  <div className="flex gap-4">
+                    <button
+                      onClick={() => onAdd(service)}
+                      className="add1 boton"
+                    >
+                      <FaCartPlus className="size-6" />
+                      <span className="text-[0.7rem]">Agregar al carrito</span>
+                    </button>
+                    <button className="whats1 boton">
+                      <ImWhatsapp className="size-6" />{" "}
+                      <span className="text-[0.6rem] md:text-[0.7rem]">
+                        Ir a Whatsapp
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-myred xl:h-20 xl:w-20"></div>
-              <div className="w-9/12">
-                <h2 className="text-2xl font-semibold italic text-myred xl:text-4xl">
-                  {servicios[1].name}
-                </h2>
-                <p className="text-[13px] font-thin md:w-7/12 xl:w-10/12 xl:text-lg">
-                  {servicios[1].description}
-                </p>
-                <p className="text-base font-semibold xl:text-xl">
-                  {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  }).format(servicios[1].price)}
-                </p>
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => onAdd(servicios[1])}
-                    className="add1 boton"
-                  >
-                    <FaCartPlus className="size-6" />
-                    <span className="text-[0.6rem] md:text-[0.7rem]">
-                      Agregar al carrito
-                    </span>
-                  </button>
-                  <button className="whats1 boton">
-                    <ImWhatsapp className="size-6" />{" "}
-                    <span className="text-[0.6rem] md:text-[0.7rem]">
-                      Ir a Whatsapp
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-myred xl:h-20 xl:w-20"></div>
-              <div className="w-9/12">
-                <h2 className="text-2xl font-semibold italic text-myred xl:text-4xl">
-                  {servicios[2].name}
-                </h2>
-
-                <p className="text-base font-semibold xl:text-xl">
-                  {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  }).format(servicios[2].price)}
-                </p>
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => onAdd(servicios[2])}
-                    className="add1 boton"
-                  >
-                    <FaCartPlus className="size-6" />
-                    <span className="text-[0.6rem] md:text-[0.7rem]">
-                      Agregar al carrito
-                    </span>
-                  </button>
-                  <button className="whats1 boton">
-                    <ImWhatsapp className="size-6" />{" "}
-                    <span className="text-[0.6rem] md:text-[0.7rem]">
-                      Ir a Whatsapp
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
