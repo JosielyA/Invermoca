@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { ImWhatsapp } from "react-icons/im";
+import { encode } from "../data/whatsappurl";
 
 export const Carousel = ({ cars }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,11 +29,6 @@ export const Carousel = ({ cars }) => {
         return 0;
       }
     });
-  };
-
-  const whatsMessage = (resource) => {
-    //send a whatsapp message whit resource
-    console.log(resource);
   };
 
   return (
@@ -73,13 +69,16 @@ export const Carousel = ({ cars }) => {
               />
             </div>
             <div className="flex place-content-center items-center p-5">
-              <button
-                onClick={() => whatsMessage(resource)}
+              <a
+                href={encode(
+                  `Hola, quiero informacion del carro '${resource.name}' que está a la venta en su pagina web.`,
+                )}
+                target="_blank"
                 className="whats1 boton mb-5 gap-3 px-6 py-2 text-lg md:px-10 md:py-4 md:text-3xl"
               >
                 <ImWhatsapp className="size-7 md:size-10" />
                 <span>Ir a whatsapp</span>
-              </button>
+              </a>
             </div>
           </div>
         ))}

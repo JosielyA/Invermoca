@@ -1,4 +1,5 @@
 import React from "react";
+import { encode } from "../data/whatsappurl";
 import { FaCartPlus } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -58,9 +59,15 @@ function CarCard({
           >
             <FaCartPlus className="size-5" />
           </button>
-          <button className="rounded-sm bg-whats px-2 py-1 text-sm font-bold uppercase text-white">
+          <a
+            target="_blank"
+            href={encode(
+              `Hola, quisiera informacion acerca del carro '${car.name}' que está a la venta en su página web.'`,
+            )}
+            className="rounded-sm bg-whats px-2 py-1 text-sm font-bold uppercase text-white"
+          >
             <FaWhatsapp className="size-5" />
-          </button>
+          </a>
         </div>
       </div>
       <div className="h-1/2 w-full md:h-full md:max-w-[53%]">

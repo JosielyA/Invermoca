@@ -83,13 +83,10 @@ function Footer() {
   });
   return (
     <div>
-      <section
-        className="flex flex-col place-content-center items-center bg-cover bg-center text-white"
-        style={{ backgroundImage: `url(${azul})` }}
-      >
+      <section className="bg-automotriz flex flex-col place-content-center items-center text-white">
         <div className="lg:flex lg:place-content-around lg:items-center">
-          <div className="lg:w-1/2 lg:p-14">
-            <div className="p-5 pt-8 lg:w-96">
+          <div className=" flex flex-col items-center lg:w-1/2 lg:p-14">
+            <div className="w-96  p-5 pt-8">
               <img src={logo} />
             </div>
             <div className="fles place-content-center items-center px-5 text-center lg:text-start">
@@ -100,7 +97,7 @@ function Footer() {
                 Contáctanos para recibir asesoramiento personalizado.
               </h2>
             </div>
-            <div className="flex flex-col gap-1 p-5">
+            <div className="flex w-10/12 flex-col gap-1 py-5">
               <div className="footerItem">
                 <IoLocationSharp className="size-10 text-myred" />
                 <span className="w-10/12">
@@ -118,108 +115,110 @@ function Footer() {
               </div>
             </div>
           </div>
-          <form
-            ref={formulario}
-            onSubmit={formik.handleSubmit}
-            className="flex flex-col gap-2 p-5 pt-0 text-black lg:w-1/2 lg:gap-5 lg:p-16"
-          >
-            <div className="flex flex-col gap-2 lg:gap-5">
-              <input
-                id="nombre"
-                name="nombre"
-                onChange={formik.handleChange}
-                value={formik.values.nombre}
-                className="footerInput"
-                type="text"
-                placeholder="Nombre"
-              />
-              {formik.errors.nombre ? (
-                <div className="valid">{formik.errors.nombre}</div>
-              ) : null}
-
-              <input
-                id="apellido"
-                name="apellido"
-                onChange={formik.handleChange}
-                value={formik.values.apellido}
-                className="footerInput"
-                type="text"
-                placeholder="Apellido"
-              />
-              {formik.errors.apellido ? (
-                <div className="valid">{formik.errors.apellido}</div>
-              ) : null}
-            </div>
-            <div className="flex gap-2 lg:gap-5">
-              <div className="flex w-1/2 flex-col gap-2 lg:gap-5">
+          <div className="flex place-content-center lg:w-3/6">
+            <form
+              ref={formulario}
+              onSubmit={formik.handleSubmit}
+              className="flex w-10/12 flex-col place-content-center gap-2 pt-0 text-black md:w-full md:p-5 lg:gap-5"
+            >
+              <div className="flex flex-col gap-2 lg:gap-5">
                 <input
-                  id="telefono"
-                  name="telefono"
+                  id="nombre"
+                  name="nombre"
                   onChange={formik.handleChange}
-                  value={formik.values.telefono}
+                  value={formik.values.nombre}
                   className="footerInput"
-                  type="number"
-                  placeholder="Telefono"
+                  type="text"
+                  placeholder="Nombre"
                 />
-                {formik.errors.telefono ? (
-                  <div className="valid">{formik.errors.telefono}</div>
+                {formik.errors.nombre ? (
+                  <div className="valid">{formik.errors.nombre}</div>
                 ) : null}
 
                 <input
-                  id="correo"
-                  name="correo"
+                  id="apellido"
+                  name="apellido"
                   onChange={formik.handleChange}
-                  value={formik.values.correo}
+                  value={formik.values.apellido}
                   className="footerInput"
                   type="text"
-                  placeholder="Correo"
+                  placeholder="Apellido"
                 />
-                {formik.errors.correo ? (
-                  <div className="valid">{formik.errors.correo}</div>
+                {formik.errors.apellido ? (
+                  <div className="valid">{formik.errors.apellido}</div>
                 ) : null}
               </div>
-              <div className="w-1/2">
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  onChange={formik.handleChange}
-                  value={formik.values.mensaje}
-                  className={`footerInput w-full resize-none ${formik.errors.mensaje || formik.errors.telefono || formik.errors.correo ? "h-[80%]" : "h-full"}`}
-                  type="text"
-                  placeholder="Mensaje"
-                />
-                {formik.errors.mensaje ? (
-                  <div className="valid">{formik.errors.mensaje}</div>
-                ) : null}
+              <div className="flex gap-2 lg:gap-5">
+                <div className="flex w-1/2 flex-col gap-2 lg:gap-5">
+                  <input
+                    id="telefono"
+                    name="telefono"
+                    onChange={formik.handleChange}
+                    value={formik.values.telefono}
+                    className="footerInput"
+                    type="number"
+                    placeholder="Telefono"
+                  />
+                  {formik.errors.telefono ? (
+                    <div className="valid">{formik.errors.telefono}</div>
+                  ) : null}
+
+                  <input
+                    id="correo"
+                    name="correo"
+                    onChange={formik.handleChange}
+                    value={formik.values.correo}
+                    className="footerInput"
+                    type="text"
+                    placeholder="Correo"
+                  />
+                  {formik.errors.correo ? (
+                    <div className="valid">{formik.errors.correo}</div>
+                  ) : null}
+                </div>
+                <div className="w-1/2">
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    onChange={formik.handleChange}
+                    value={formik.values.mensaje}
+                    className={`footerInput w-full resize-none ${formik.errors.mensaje || formik.errors.telefono || formik.errors.correo ? "h-[80%]" : "h-full"}`}
+                    type="text"
+                    placeholder="Mensaje"
+                  />
+                  {formik.errors.mensaje ? (
+                    <div className="valid">{formik.errors.mensaje}</div>
+                  ) : null}
+                </div>
               </div>
-            </div>
-            <div className="flex place-content-between gap-4">
-              <div className="flex items-center gap-2">
-                <a
-                  href="https://www.instagram.com/invermoca/?hl=es-la"
-                  target="_blank"
-                >
-                  <BsInstagram className="size-12 text-myred" />
-                </a>
-                <a href="https://twitter.com/invermoca_MCBO" target="_blank">
-                  <BsTwitter className="size-12 text-myred" />
-                </a>
-                <a href="#">
-                  <SiMercadopago className="size-12 text-myred" />
-                </a>
+              <div className="flex place-content-between gap-4">
+                <div className="flex items-center gap-2 md:gap-4">
+                  <a
+                    href="https://www.instagram.com/invermoca/?hl=es-la"
+                    target="_blank"
+                  >
+                    <BsInstagram className="size-8 text-myred sm:size-12" />
+                  </a>
+                  <a href="https://twitter.com/invermoca_MCBO" target="_blank">
+                    <BsTwitter className="size-8 text-myred sm:size-12" />
+                  </a>
+                  <a href="#">
+                    <SiMercadopago className="size-8 text-myred sm:size-14" />
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <button
+                    type="submit"
+                    className="bg-myred px-10 py-2 text-2xl font-bold italic text-white disabled:bg-gray-400 sm:px-16 sm:py-4 md:text-3xl"
+                    disabled={loading}
+                  >
+                    Enviar
+                  </button>
+                  <MdKeyboardArrowRight className="invisible absolute size-12 text-white sm:visible sm:static" />
+                </div>
               </div>
-              <div className="flex items-center">
-                <button
-                  type="submit"
-                  className="bg-myred px-12 py-3 text-2xl font-bold italic text-white disabled:bg-gray-400"
-                  disabled={loading}
-                >
-                  Enviar
-                </button>
-                <MdKeyboardArrowRight className="size-12 text-white" />
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
     </div>

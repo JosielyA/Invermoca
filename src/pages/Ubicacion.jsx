@@ -16,7 +16,8 @@ function Ubicacion() {
           </h2>
           <div className="flex w-full gap-4 text-sm md:text-lg lg:gap-7">
             <a
-              href=""
+              href="https://maps.app.goo.gl/Xb7rY5Fev3jWfo4X6"
+              target="_blank"
               className="flex h-[2.5rem] w-1/2 place-content-center items-center rounded-[5px] bg-white shadow-md hover:scale-110 md:h-[4rem]"
             >
               <div className="flex place-content-center items-center gap-2">
@@ -25,7 +26,8 @@ function Ubicacion() {
               </div>
             </a>
             <a
-              href=""
+              href="https://maps.app.goo.gl/96BWsJV4TNHFv16M9"
+              target="_blank"
               className="flex h-[2.5rem] w-1/2 place-content-center items-center rounded-[5px] bg-white shadow-md hover:scale-110 md:h-[4rem]"
             >
               <div className="flex place-content-center items-center gap-2">

@@ -11,6 +11,7 @@ import carro from "../assets/images/backgrounds/DSC_0171.jpg";
 import { ImWhatsapp } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
 import { servicios } from "../data/carsData";
+import { encode } from "../data/whatsappurl";
 
 function IndexPage({
   allProductsinCart,
@@ -83,39 +84,38 @@ function IndexPage({
         <div className="">
           <div className="mb-10 flex place-content-center items-center text-center">
             <div className="flex flex-col items-center gap-4">
-              <h2 className="text-3xl font-bold text-myred md:text-4xl">
+              <h2 className="text-3xl font-bold text-myred md:text-5xl">
                 Los mejores vehículos
               </h2>
-              <h3 className="w-11/12 md:w-10/12">
+              <h3 className="w-11/12 px-10 text-lg md:w-10/12 md:px-0 md:text-2xl">
                 Encontrar el vehículo ideal que se adapte a tu estilo de vida,
                 nunca había sido tan fácil.
               </h3>
             </div>
           </div>
-          <div className="grid grid-cols-1 place-content-center items-center gap-10 p-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="flex flex-wrap place-content-around items-center gap-6 p-6">
             {services.map((service, i) => (
               <div
                 key={i}
-                className="flex h-[105%] flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:max-h-[360px] md:min-h-[360px] xl:max-h-[400px] xl:min-h-[400px] 2xl:max-h-[470px] 2xl:min-h-[470px]"
+                className="flex w-10/12 flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:w-[45%] lg:w-[30%] "
               >
                 <div className="flex place-content-center items-center">
                   <img src={service.imagen} className="rounded-lg" />
                 </div>
                 <div className="">
-                  <h2 className="mb-2 text-3xl font-bold text-myred">
+                  <h2 className="mb-2 text-4xl font-bold text-myred">
                     {service.titulo}
                   </h2>
-                  <p className="">{service.texto}</p>
+                  <p className="no-scrollbar h-[120px] overflow-y-scroll pb-4 text-xl  md:h-[120px] ">
+                    {service.texto}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <div
-        className="w-full overflow-hidden bg-cover bg-center py-10 sm:h-[400px] lg:h-screen"
-        style={{ backgroundImage: `url(${azul})` }}
-      >
+      <div className="bg-automotriz w-full overflow-hidden py-10 sm:h-[400px] lg:h-screen">
         <div className="flex h-full items-center">
           <div className="absolute flex min-w-[380px] place-content-center bg-black/40 p-4 text-center text-white backdrop-blur-sm md:backdrop-blur-0 lg:ml-[8rem] lg:bg-transparent lg:text-start">
             <div className="w-full">
@@ -148,9 +148,9 @@ function IndexPage({
           <div className="invisible absolute left-0 w-1/2 xl:visible ">
             <img src={autonegro} className="xl:min-h-[70vh]" />
           </div>
-          <div className="flex flex-col place-content-around gap-10 p-5 md:p-0 xl:min-h-[80vh] xl:w-[45%] 2xl:w-[40%]">
-            {servicios.map((service) => (
-              <div className="flex items-center gap-4">
+          <div className="flex flex-col place-content-around gap-10 p-5 md:p-0 xl:min-h-[65vh] xl:w-[45%] 2xl:w-[40%]">
+            {servicios.map((service, i) => (
+              <div key={i} className="flex items-center gap-4">
                 <div className="h-14 w-14 rounded-full bg-myred xl:h-16 xl:w-16"></div>
                 <div className="w-9/12">
                   <h2 className="text-2xl font-semibold italic text-myred xl:text-3xl">
@@ -159,26 +159,29 @@ function IndexPage({
                   <p className="text-[13px] font-thin xl:w-10/12 xl:text-base">
                     {service.description}
                   </p>
-                  <p className="text-base font-semibold xl:text-lg">
-                    {new Intl.NumberFormat("en-US", {
-                      style: "currency",
-                      currency: "USD",
-                    }).format(service.price)}
-                  </p>
                   <div className="flex gap-4">
-                    <button
-                      onClick={() => onAdd(service)}
-                      className="add1 boton"
+                    {service.name == "Limpieza" ? (
+                      <a className="add1 boton">
+                        <FaCartPlus className="size-6" />
+                        <span className="text-[0.7rem]">
+                          Agregar al carrito
+                        </span>
+                      </a>
+                    ) : (
+                      ""
+                    )}
+                    <a
+                      target="_blank"
+                      href={encode(
+                        `Hola, quiero información acerca de el servicio '${service.name}.'`,
+                      )}
+                      className="whats1 boton"
                     >
-                      <FaCartPlus className="size-6" />
-                      <span className="text-[0.7rem]">Agregar al carrito</span>
-                    </button>
-                    <button className="whats1 boton">
                       <ImWhatsapp className="size-6" />{" "}
                       <span className="text-[0.6rem] md:text-[0.7rem]">
                         Ir a Whatsapp
                       </span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
