@@ -18,6 +18,12 @@ body {
   background-position: center;
 }
 
+.vehiculos {
+  background-image: url(./assets/images/backgrounds//DSC_0236.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

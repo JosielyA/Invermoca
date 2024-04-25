@@ -5,6 +5,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { FaXmark } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { encode } from "../data/whatsappurl";
 
 function Navbar({
   allProductsinCart,
@@ -15,6 +17,7 @@ function Navbar({
   setCountProducts,
 }) {
   const [active, setActive] = useState(false);
+  const navigate = useNavigate();
 
   const onClearCart = () => {
     setTotal(0);
@@ -30,6 +33,10 @@ function Navbar({
     setTotal(total - product.price * alreadyInProduct.quantity);
     setCountProducts(countProducts - alreadyInProduct.quantity);
     setAllProductsinCart(results);
+  };
+  const onBuy = () => {
+    const mymessage = " Hola como estas\n bien y tu \n bien gracias";
+    window.open(encode(mymessage), "_blank");
   };
   return (
     <div>
@@ -98,7 +105,10 @@ function Navbar({
                           >
                             Vaciar carrito
                           </button>
-                          <button className="text-bwhite rounded-md bg-green-500 px-4 py-2 transition-transform duration-100 ease-linear hover:scale-110">
+                          <button
+                            onClick={onBuy}
+                            className="text-bwhite rounded-md bg-green-500 px-4 py-2 transition-transform duration-100 ease-linear hover:scale-110"
+                          >
                             Comprar
                           </button>
                         </div>
@@ -117,8 +127,8 @@ function Navbar({
             <span>Home</span>
             <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
-          <Link to="/catalogo" className="flex items-center">
-            <span>Catalogo</span>
+          <Link to="/limpieza" className="flex items-center">
+            <span>Limpieza</span>
             <IoMdArrowDropdown className="ml-1 size-4" />
           </Link>
           <Link to="/vehiculos" className="flex items-center">

@@ -10,8 +10,10 @@ import productosDeCalidad from "../assets/images/backgrounds/DSC_0494.jpg";
 import carro from "../assets/images/backgrounds/DSC_0171.jpg";
 import { ImWhatsapp } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
+import { MdLocalCarWash } from "react-icons/md";
 import { servicios } from "../data/carsData";
 import { encode } from "../data/whatsappurl";
+import { Link } from "react-router-dom";
 
 function IndexPage({
   allProductsinCart,
@@ -161,12 +163,12 @@ function IndexPage({
                   </p>
                   <div className="flex gap-4">
                     {service.name == "Limpieza" ? (
-                      <a className="add1 boton">
-                        <FaCartPlus className="size-6" />
-                        <span className="text-[0.7rem]">
-                          Agregar al carrito
+                      <Link to="/limpieza" className="add1 boton">
+                        <MdLocalCarWash className="size-6" />
+                        <span className="text-[0.7rem] md:text-sm">
+                          Ver precios
                         </span>
-                      </a>
+                      </Link>
                     ) : (
                       ""
                     )}
@@ -178,7 +180,7 @@ function IndexPage({
                       className="whats1 boton"
                     >
                       <ImWhatsapp className="size-6" />{" "}
-                      <span className="text-[0.6rem] md:text-[0.7rem]">
+                      <span className="text-[0.6rem] md:text-sm">
                         Ir a Whatsapp
                       </span>
                     </a>

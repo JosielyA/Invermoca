@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import CarCard from "./CarCard";
+import { FaPlus } from "react-icons/fa6";
+import { IoMenu } from "react-icons/io5";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 import axios from "axios";
@@ -14,12 +16,27 @@ function CarList({
   setCountProducts,
 }) {
   const [cars, setCars] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [carsTypes, setCarsTypes] = useState([]);
   const [carsPerPage, setCarsPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const filtroPorAsientos = [
+    { texto: "Dos Asientos", valor: "dosasientos" },
+    { texto: "Cuatro Asientos", valor: "cuatroasientos" },
+    { texto: "Cinco Asientos", valor: "cincoasientos" },
+    { texto: "Menos de 10 Asientos", valor: "menos10asientos" },
+    { texto: "Más de 10 Asientos", valor: "mas10asientos" },
+  ];
+
+  const [checkedState, setCheckedState] = useState(
+    new Array(filtroPorAsientos.length).fill(false),
+  );
+
   const carsRef = useRef(null);
 
-  const productsQuantity = cars.length;
+  const productsQuantity = filteredCars.length;
   const lastIndex = currentPage * carsPerPage;
   const firstIndex = lastIndex - carsPerPage;
   const pagesQuantity = Math.ceil(productsQuantity / carsPerPage);
@@ -30,8 +47,41 @@ function CarList({
     pageNumbers.push(i);
   }
 
+  const toggleMenu = () => {
+    setMenuIsOpen((prev) => !prev);
+  };
+
+  const handleCheckboxChange = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item,
+    );
+
+    setCheckedState(updatedCheckedState);
+  };
+
+  const filterByType = (type) => {
+    if (type == "Sin marca") {
+      const filter = cars.filter((car) => car.marca == undefined);
+      setFilteredCars(filter);
+    } else {
+      const filter = cars.filter((car) => car.marca == type);
+      setFilteredCars(filter);
+    }
+  };
+
   const getCars = async () => {
     setCars(carros);
+    setFilteredCars(carros);
+  };
+  const getCarsType = () => {
+    let carsTypestoSet = [];
+    for (const element of carros) {
+      const tipo = element.marca || "Sin marca";
+      if (!carsTypestoSet.includes(tipo)) {
+        carsTypestoSet.push(tipo);
+      }
+    }
+    setCarsTypes(carsTypestoSet);
   };
 
   const onPrevious = () => {
@@ -64,48 +114,97 @@ function CarList({
   };
   useEffect(() => {
     getCars();
+    getCarsType();
   }, []);
   return (
-    <div ref={carsRef}>
-      <div className="mt-[12rem] flex flex-wrap place-content-center gap-7 pt-5 sm:mt-[15rem] md:mt-[19.8rem] md:pt-0  lg:mt-[12rem]">
-        {cars
-          .map((car) => (
-            <CarCard
-              key={car.id}
-              car={car}
-              allProductsinCart={allProductsinCart}
-              setAllProductsinCart={setAllProductsinCart}
-              total={total}
-              setTotal={setTotal}
-              countProducts={countProducts}
-              setCountProducts={setCountProducts}
-            />
-          ))
-          .slice(firstIndex, lastIndex)}
+    <div ref={carsRef} className="">
+      <div className="flex place-content-end px-5 py-5">
+        <button
+          onClick={toggleMenu}
+          className="flex items-center gap-2 rounded-md bg-myred p-2"
+        >
+          <IoMenu className="size-12 text-white" />
+        </button>
       </div>
-      <div
-        className={`${cars.length > 6 ? "" : "hidden"} mx-10 mb-10 flex place-content-between items-center p-5`}
+      <aside
+        className={`${menuIsOpen ? "" : "translate-x-full"} absolute left-0 -mt-6 w-full bg-white transition-all duration-200 ease-in-out`}
       >
-        <button>
-          <IoMdArrowDropleft
-            onClick={onPrevious}
-            className="size-10 md:size-12"
-          />
-        </button>
-        <div className="flex gap-1 md:gap-4">
-          {pageNumbers.map((nopage) => (
-            <button
-              key={nopage}
-              onClick={() => onSpecificPage(nopage)}
-              className={`flex h-10 w-10 place-content-center items-center rounded-md p-1 md:h-14 md:w-14 ${currentPage == nopage ? "bg-myred text-white" : "bg-gray-300  text-black"}`}
-            >
-              {nopage}
-            </button>
-          ))}
+        <section>
+          <header className="flex h-[60px] place-content-center items-center bg-myred text-center text-white">
+            <h2 className="text-lg font-semibold">Encuentra tu vehículo</h2>
+          </header>
+          <section className="max-h-[200px] overflow-scroll border-x-2 p-4">
+            <ul className="space-y-2">
+              {carsTypes.map((tipo, i) => (
+                <li
+                  key={i}
+                  className=" flex place-content-between items-center"
+                >
+                  <button
+                    onClick={() => {
+                      filterByType(tipo);
+                      toggleMenu();
+                    }}
+                  >
+                    {tipo}
+                  </button>
+                  <FaPlus />
+                </li>
+              ))}
+            </ul>
+          </section>
+        </section>
+        <section>
+          <header className="flex h-[50px] place-content-center items-center bg-myred text-center text-white">
+            <h2 className="text-lg font-semibold">Filtros</h2>
+          </header>
+          <section className="flex max-h-[200px] flex-col space-y-3 overflow-scroll border-x-2 border-b-2 p-4">
+            {filtroPorAsientos.map(({ texto, valor }, i) => (
+              <label key={i}>
+                <input
+                  type="checkbox"
+                  name={valor}
+                  id={valor}
+                  value={valor}
+                  onChange={() => handleCheckboxChange(i)}
+                />{" "}
+                {texto}
+              </label>
+            ))}
+          </section>
+        </section>
+      </aside>
+
+      <div>
+        <div className="flex flex-wrap">
+          {filteredCars
+            .map((car) => (
+              <CarCard
+                key={car.id}
+                car={car}
+                allProductsinCart={allProductsinCart}
+                setAllProductsinCart={setAllProductsinCart}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+              />
+            ))
+            .slice(firstIndex, lastIndex)}
         </div>
-        <button>
-          <IoMdArrowDropright onClick={onNext} className="size-10 md:size-12" />
-        </button>
+        <div className={`${filteredCars.length > 6 ? "" : "hidden"}`}>
+          <div className="">
+            {pageNumbers.map((nopage) => (
+              <button
+                key={nopage}
+                onClick={() => onSpecificPage(nopage)}
+                className={`${currentPage == nopage ? "bg-myred text-white" : "bg-gray-300  text-black"}`}
+              >
+                {nopage}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

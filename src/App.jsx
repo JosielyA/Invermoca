@@ -9,6 +9,7 @@ import Ubicacion from "./pages/Ubicacion";
 import PricesPage from "./pages/PricesPage";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/scrollToTop";
 
 function App() {
   const [allProductsinCart, setAllProductsinCart] = useState([]);
@@ -24,6 +25,7 @@ function App() {
         countProducts={countProducts}
         setCountProducts={setCountProducts}
       />
+      <ScrollToTop />
       <div>
         <Toaster />
       </div>
@@ -42,7 +44,7 @@ function App() {
           }
         />
         <Route path="/servicios" element={<Servicios />} />
-        <Route path="/catalogo" element={<PricesPage />} />
+        <Route path="/limpieza" element={<PricesPage />} />
         <Route
           path="/vehiculos"
           element={

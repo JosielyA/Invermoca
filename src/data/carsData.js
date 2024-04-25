@@ -2,6 +2,8 @@ export const carros = [
   {
     id: 0,
     name: "Camaro lorem ",
+    marca: "Camaro",
+    asientos: 4,
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
@@ -11,6 +13,8 @@ export const carros = [
   {
     id: 1,
     name: "Chevrolet lorem",
+    marca: "Camaro",
+    asientos: 4,
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
     image:
@@ -19,6 +23,8 @@ export const carros = [
   {
     id: 2,
     name: "Toyota lorem",
+    marca: "Chevrolet",
+    asientos: 2,
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
@@ -28,6 +34,8 @@ export const carros = [
   {
     id: 3,
     name: "Camaro lorem ",
+    asientos: 4,
+    marca: "Chevrolet",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
@@ -37,6 +45,8 @@ export const carros = [
   {
     id: 4,
     name: "Chevrolet lorem",
+    asientos: 2,
+    marca: "Chevrolet",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
     image:
@@ -45,6 +55,8 @@ export const carros = [
   {
     id: 5,
     name: "Toyota lorem",
+    asientos: 2,
+    marca: "Chevrolet",
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
@@ -53,7 +65,9 @@ export const carros = [
   },
   {
     id: 6,
+    asientos: 4,
     name: "Camaro lorem ",
+    marca: "Chevrolet",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
@@ -62,7 +76,9 @@ export const carros = [
   },
   {
     id: 7,
+    asientos: 4,
     name: "Chevrolet lorem",
+    marca: "Chevrolet",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
     image:
@@ -71,6 +87,8 @@ export const carros = [
   {
     id: 8,
     name: "Toyota lorem",
+    asientos: 2,
+    marca: "Chevrolet",
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
@@ -80,15 +98,8 @@ export const carros = [
   {
     id: 9,
     name: "Camaro lorem ",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
-    price: 2000,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
-  },
-  {
-    id: 0,
-    name: "Camaro lorem ",
+    asientos: 4,
+    marca: "Chevrolet",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
@@ -97,15 +108,29 @@ export const carros = [
   },
   {
     id: 10,
+    asientos: 4,
+    name: "Camaro lorem ",
+    marca: "lorem",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
+    price: 2000,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
+  },
+  {
+    id: 11,
     name: "Chevrolet lorem",
+    asientos: 4,
+    marca: "lorem",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
     image:
       "https://www.shutterstock.com/image-illustration/tula-russia-february-28-2021-260nw-1932915491.jpg",
   },
   {
-    id: 11,
+    id: 12,
     name: "Toyota lorem",
+    asientos: 2,
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
@@ -113,8 +138,9 @@ export const carros = [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
   },
   {
-    id: 12,
+    id: 13,
     name: "Camaro lorem ",
+    asientos: 4,
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
@@ -124,6 +150,8 @@ export const carros = [
   {
     id: 14,
     name: "Toyota lorem",
+    asientos: 4,
+
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
@@ -134,12 +162,6 @@ export const carros = [
 
 export const servicios = [
   {
-    id: 1000,
-    name: "Limpieza",
-    description: "Pulilavado, lavado de chasis y motor, latoneria.",
-    price: 500,
-  },
-  {
     id: 2000,
     name: "Servicios de mecánica",
     description:
@@ -147,8 +169,16 @@ export const servicios = [
     price: 200,
   },
   {
+    id: 1000,
+    name: "Limpieza",
+    description: "Pulilavado, lavado de chasis y motor, latoneria.",
+    price: 500,
+  },
+  {
     id: 3000,
     name: "Pintura automotríz",
+    description:
+      "Restauramos la apariencia del vehículo, combinando expertamente colores y aplicando un acabado duradero.",
     price: 100,
   },
 ];

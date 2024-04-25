@@ -25,11 +25,12 @@ const validate = (values) => {
   }
   if (!values.telefono) {
     errors.telefono = "Requerido";
+  } else if (!isValidPhoneNumber(values.telefono)) {
+    errors.telefono = "Número de telefono inválido.";
   }
   if (!values.mensaje) {
     errors.mensaje = "Requerido";
   }
-
   if (values.apellido.length > 15) {
     errors.apellido = "Debe ser de 15 caracteres o menos.";
   }
@@ -43,9 +44,15 @@ const validate = (values) => {
   return errors;
 };
 
+function isValidPhoneNumber(phoneNumber) {
+  const regex = /0[1-9]{3}[-\s]\d{7}|0[1-9]{3}\d{7}/;
+  return regex.test(phoneNumber);
+}
+
 function Footer() {
   const [loading, setLoading] = useState(false);
   const formulario = useRef();
+
   const formik = useFormik({
     initialValues: {
       nombre: "",
@@ -81,6 +88,7 @@ function Footer() {
       );
     },
   });
+
   return (
     <div>
       <section className="bg-automotriz flex flex-col place-content-center items-center text-white">
@@ -156,7 +164,7 @@ function Footer() {
                     onChange={formik.handleChange}
                     value={formik.values.telefono}
                     className="footerInput"
-                    type="number"
+                    type="tel"
                     placeholder="Telefono"
                   />
                   {formik.errors.telefono ? (
@@ -202,7 +210,10 @@ function Footer() {
                   <a href="https://twitter.com/invermoca_MCBO" target="_blank">
                     <BsTwitter className="size-8 text-myred sm:size-12" />
                   </a>
-                  <a href="#">
+                  <a
+                    href="https://www.mercadolibre.com.ve/pagina/invermocamcbo?item_id=MLV756179721&category_id=MLV446395&seller_id=1034082447&client=recoview-selleritems&recos_listing=true"
+                    target="_blank"
+                  >
                     <SiMercadopago className="size-8 text-myred sm:size-14" />
                   </a>
                 </div>

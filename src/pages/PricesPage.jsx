@@ -42,7 +42,11 @@ function PricesPage() {
               Precios
             </h2>
           </div>
+
           <section className="flex flex-col gap-4 text-darkblue">
+            <h3 className="text-4xl font-bold text-black md:text-5xl lg:text-6xl">
+              Limpieza
+            </h3>
             {llaves.map((service, i) => (
               <div key={i}>
                 <ul className="flex flex-col ">

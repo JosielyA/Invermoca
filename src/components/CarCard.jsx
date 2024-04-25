@@ -33,45 +33,16 @@ function CarCard({
   };
 
   return (
-    <div className="flex w-[44%] min-w-64 flex-col-reverse items-start bg-gray-300 shadow-md shadow-black md:flex-row">
-      <div className="md:w/1/2 flex h-1/2 w-full flex-col place-content-between md:h-full">
-        <div className="h-2/3 p-3 md:p-5">
-          <h2 className="text-base font-bold uppercase text-myred lg:text-xl">
-            {car.name}
-          </h2>
-          <p className="text-[10px] font-light uppercase lg:text-[12px]">
-            {car.description}
-          </p>
-          <p className="font-medium">
-            {new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD",
-            }).format(car.price)}
-          </p>
-        </div>
-        <div className="flex items-center gap-2 self-end p-3 md:p-5">
-          <button className="rounded-sm bg-myred px-2 py-1 text-sm font-bold uppercase text-white">
-            Ver Fotos
-          </button>
-          <button
-            onClick={() => onAdd(car)}
-            className="rounded-sm bg-myred px-2 py-1 text-sm font-bold uppercase text-white"
-          >
-            <FaCartPlus className="size-5" />
-          </button>
-          <a
-            target="_blank"
-            href={encode(
-              `Hola, quisiera informacion acerca del carro '${car.name}' que está a la venta en su página web.'`,
-            )}
-            className="rounded-sm bg-whats px-2 py-1 text-sm font-bold uppercase text-white"
-          >
-            <FaWhatsapp className="size-5" />
-          </a>
-        </div>
+    <div className="">
+      <div>
+        <img src={car.image} alt={`Imagen de ${car.name}`} />
       </div>
-      <div className="h-1/2 w-full md:h-full md:max-w-[53%]">
-        <img src={car.image} className="h-full w-full" />
+      <div>
+        <h2>{car.name}</h2>
+        <h2>{car.marca}</h2>
+        <button className="rounded-md bg-myred px-4 py-2 text-lg font-semibold uppercase text-white">
+          ver fotos
+        </button>
       </div>
     </div>
   );
