@@ -8,6 +8,7 @@ function CarCard({
   allProductsinCart,
   setAllProductsinCart,
   total,
+  setViewCar,
   setTotal,
   countProducts,
   setCountProducts,
@@ -49,7 +50,7 @@ function CarCard({
         </div>
         <div>
           <button
-            onClick={() => alert("hola")}
+            onClick={() => setViewCar([car])}
             className="rounded-md bg-myred px-4 py-2 text-lg font-semibold uppercase text-white"
           >
             ver fotos
