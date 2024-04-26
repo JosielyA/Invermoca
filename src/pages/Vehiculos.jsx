@@ -48,8 +48,6 @@ function Vehiculos({
           setCountProducts={setCountProducts}
         />
       </section>
-
-      <div className=" absolute -mb-10 -mt-5 h-1 w-full bg-myred"></div>
       <Footer />
     </div>
   );

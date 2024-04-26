@@ -33,16 +33,28 @@ function CarCard({
   };
 
   return (
-    <div className="">
-      <div>
-        <img src={car.image} alt={`Imagen de ${car.name}`} />
+    <div className="flex w-full flex-col items-center bg-green-200 text-center md:w-[45%]">
+      <div className="w-full">
+        <img
+          className="h-[12rem] w-full object-fill sm:h-[16rem] lg:h-[14rem] 2xl:h-[16rem]"
+          src={car.image}
+          alt={`Imagen de ${car.name}`}
+        />
       </div>
-      <div>
-        <h2>{car.name}</h2>
-        <h2>{car.marca}</h2>
-        <button className="rounded-md bg-myred px-4 py-2 text-lg font-semibold uppercase text-white">
-          ver fotos
-        </button>
+      <div className="flex h-full w-full flex-col justify-between space-y-5 bg-gray-300 p-4">
+        <div className="">
+          <h2 className="text-xl font-bold uppercase text-myred">
+            {car.marca} {car.name}
+          </h2>
+        </div>
+        <div>
+          <button
+            onClick={() => alert("hola")}
+            className="rounded-md bg-myred px-4 py-2 text-lg font-semibold uppercase text-white"
+          >
+            ver fotos
+          </button>
+        </div>
       </div>
     </div>
   );

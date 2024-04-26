@@ -1,7 +1,7 @@
 export const carros = [
   {
     id: 0,
-    name: "Camaro lorem ",
+    name: "lorem",
     marca: "Camaro",
     asientos: 4,
     description:
@@ -12,7 +12,7 @@ export const carros = [
   },
   {
     id: 1,
-    name: "Chevrolet lorem",
+    name: "lorem",
     marca: "Camaro",
     asientos: 4,
     description: "Soluta repellat magni at fugit reprehenderit.",
@@ -54,8 +54,8 @@ export const carros = [
   },
   {
     id: 5,
-    name: "Toyota lorem",
-    asientos: 2,
+    name: "lorem",
+    asientos: 11,
     marca: "Chevrolet",
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
@@ -66,7 +66,7 @@ export const carros = [
   {
     id: 6,
     asientos: 4,
-    name: "Camaro lorem ",
+    name: "lorem ",
     marca: "Chevrolet",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
@@ -76,8 +76,8 @@ export const carros = [
   },
   {
     id: 7,
-    asientos: 4,
-    name: "Chevrolet lorem",
+    asientos: 10,
+    name: "lorem",
     marca: "Chevrolet",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
@@ -150,7 +150,7 @@ export const carros = [
   {
     id: 14,
     name: "Toyota lorem",
-    asientos: 4,
+    asientos: 10,
 
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
