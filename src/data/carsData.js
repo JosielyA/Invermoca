@@ -5,10 +5,13 @@ export const carros = [
     marca: "Camaro",
     asientos: 4,
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, iure qui, vitae sit adipisci tempore officiis temporibus assumenda illo provident ea dolor accusantium nostrum quam aliquid rerum. Exercitationem, molestiae eligendi?",
     price: 2000,
-    image:
+    image: [
       "https://multimarca.com.ve/wp-content/uploads/2023/06/COROLLA-SEG-AC446BP-DIAGONAL.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 1,
@@ -17,8 +20,11 @@ export const carros = [
     asientos: 4,
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
-    image:
+    image: [
       "https://www.shutterstock.com/image-illustration/tula-russia-february-28-2021-260nw-1932915491.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 2,
@@ -28,8 +34,11 @@ export const carros = [
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
-    image:
+    image: [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 3,
@@ -39,8 +48,11 @@ export const carros = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
-    image:
+    image: [
       "https://multimarca.com.ve/wp-content/uploads/2023/06/COROLLA-SEG-AC446BP-DIAGONAL.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 4,
@@ -49,8 +61,11 @@ export const carros = [
     marca: "Chevrolet",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
-    image:
+    image: [
       "https://www.shutterstock.com/image-illustration/tula-russia-february-28-2021-260nw-1932915491.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 5,
@@ -60,8 +75,11 @@ export const carros = [
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
-    image:
+    image: [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 6,
@@ -71,8 +89,11 @@ export const carros = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
-    image:
+    image: [
       "https://multimarca.com.ve/wp-content/uploads/2023/06/COROLLA-SEG-AC446BP-DIAGONAL.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 7,
@@ -81,8 +102,11 @@ export const carros = [
     marca: "Chevrolet",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
-    image:
+    image: [
       "https://www.shutterstock.com/image-illustration/tula-russia-february-28-2021-260nw-1932915491.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 8,
@@ -92,8 +116,11 @@ export const carros = [
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
-    image:
+    image: [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 9,
@@ -103,8 +130,11 @@ export const carros = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
-    image:
+    image: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 10,
@@ -114,8 +144,11 @@ export const carros = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
-    image:
+    image: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 11,
@@ -124,8 +157,11 @@ export const carros = [
     marca: "lorem",
     description: "Soluta repellat magni at fugit reprehenderit.",
     price: 5000,
-    image:
+    image: [
       "https://www.shutterstock.com/image-illustration/tula-russia-february-28-2021-260nw-1932915491.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 12,
@@ -134,8 +170,11 @@ export const carros = [
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
-    image:
+    image: [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 13,
@@ -144,8 +183,11 @@ export const carros = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, quia!",
     price: 2000,
-    image:
+    image: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaMpl4YN-EclfXnAfxcB3CaXh4C9bZn0F8eDKLDIthg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
   {
     id: 14,
@@ -155,8 +197,11 @@ export const carros = [
     description:
       "Dignissimos voluptatibus odit nihil labore, deleniti repudiandae.",
     price: 3200,
-    image:
+    image: [
       "https://assets.volkswagen.com/is/image/volkswagenag/diferencias-carros-sedan-hatchback-suv?Zml0PWNyb3AlMkMxJndpZD0xMjgwJmhlaT03MjAmZm10PWpwZWcmcWx0PTc5JmJmYz1vZmYmMmI5ZQ==",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmTf7h0AFzsYjKfGAFAaQVRwbGkwlssgY0Ww-I1gw-Qg&s",
+    ],
   },
 ];
 

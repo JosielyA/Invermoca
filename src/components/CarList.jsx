@@ -5,6 +5,8 @@ import { IoMenu } from "react-icons/io5";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 import axios from "axios";
+import { Carousel } from "./Carousel";
+import { FaFilter } from "react-icons/fa";
 
 function CarList({
   carros,
@@ -17,18 +19,9 @@ function CarList({
 }) {
   const [cars, setCars] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
-  const [viewCar, setViewCar] = useState([
-    {
-      id: 4,
-      name: "Chevrolet lorem",
-      asientos: 2,
-      marca: "Chevrolet",
-      description: "Soluta repellat magni at fugit reprehenderit.",
-      price: 5000,
-      image:
-        "https://www.shutterstock.com/image-illustration/tula-russia-february-28-2021-260nw-1932915491.jpg",
-    },
-  ]);
+
+  const [viewCar, setViewCar] = useState([]);
+
   const [typeFilterSelected, setTypeFilterSelected] = useState("");
   const [typeSitsSelected, setTypeSitsSelected] = useState([]);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -123,28 +116,11 @@ function CarList({
     setCarsTypes(carsTypestoSet);
   };
 
-  const onPrevious = () => {
-    if (currentPage <= 1) {
-      setCurrentPage(pagesQuantity);
-      scrollToSection(carsRef);
-    } else {
-      setCurrentPage(currentPage - 1);
-      scrollToSection(carsRef);
-    }
-  };
-  const onNext = () => {
-    if (currentPage >= pagesQuantity) {
-      setCurrentPage(1);
-      scrollToSection(carsRef);
-    } else {
-      setCurrentPage(currentPage + 1);
-      scrollToSection(carsRef);
-    }
-  };
   const onSpecificPage = (n) => {
     setCurrentPage(n);
     scrollToSection(carsRef);
   };
+
   const scrollToSection = (elementRef) => {
     elementRef.current.scrollIntoView({
       behavior: "smooth",
@@ -160,13 +136,7 @@ function CarList({
     getCarsType();
   }, [typeFilterSelected, typeSitsSelected]);
   if (viewCar.length > 0) {
-    return (
-      <div>
-        {viewCar[0].name}
-        <img src={viewCar[0].image} alt="" />
-        <button onClick={() => setViewCar([])}>Exit</button>
-      </div>
-    );
+    return <Carousel car={viewCar[0]} setViewCar={setViewCar} />;
   } else {
     return (
       <div
@@ -176,9 +146,10 @@ function CarList({
         <div className="flex place-content-end self-end px-5 py-5 md:invisible md:absolute">
           <button
             onClick={toggleMenu}
-            className="flex items-center gap-2 rounded-md bg-myred p-2"
+            className="flex items-center gap-2 rounded-md bg-myred p-4 text-lg font-medium uppercase text-white"
           >
-            <IoMenu className="size-12 text-white" />
+            <FaFilter className="size-7 text-white" />
+            <h2>Filtros</h2>
           </button>
         </div>
 
@@ -205,35 +176,32 @@ function CarList({
             </header>
             <section className="max-h-[500px] overflow-y-scroll border-x-2 p-4">
               <ul className="space-y-2">
-                <li
-                  className={`${!typeFilterSelected ? "bg-myred text-white" : "text-myred"} flex place-content-between items-center p-2`}
-                >
+                <li>
                   <button
                     onClick={() => {
                       setTypeFilterSelected("");
+                      setCurrentPage(1);
                       toggleMenu();
                     }}
-                    className="uppercase"
+                    className={`${!typeFilterSelected ? "bg-myred text-white" : "text-myred"} flex w-full place-content-between items-center p-2 uppercase`}
                   >
                     Ver todos
+                    <FaPlus />
                   </button>
-                  <FaPlus />
                 </li>
                 {carsTypes.map((tipo, i) => (
-                  <li
-                    key={i}
-                    className={`${typeFilterSelected == tipo ? "bg-myred text-white" : ""} flex place-content-between items-center p-2`}
-                  >
+                  <li key={i}>
                     <button
                       onClick={() => {
                         setTypeFilterSelected(tipo);
+                        setCurrentPage(1);
                         toggleMenu();
                       }}
-                      className="uppercase"
+                      className={`${typeFilterSelected == tipo ? "bg-myred text-white" : ""} flex w-full place-content-between items-center p-2 uppercase`}
                     >
                       {tipo}
+                      <FaPlus />
                     </button>
-                    <FaPlus />
                   </li>
                 ))}
               </ul>
@@ -245,35 +213,32 @@ function CarList({
             </header>
             <section className="mt-4 flex max-h-[500px] flex-col space-y-3 overflow-y-scroll border-x-2 border-b-2 p-4">
               <ul className="">
-                <li
-                  className={`${typeSitsSelected.length < 1 ? "bg-myred text-white" : "text-myred"} flex place-content-between items-center p-2`}
-                >
+                <li>
                   <button
                     onClick={() => {
                       setTypeSitsSelected([]);
+                      setCurrentPage(1);
                       toggleMenu();
                     }}
-                    className="uppercase"
+                    className={`${typeSitsSelected.length < 1 ? "bg-myred text-white" : "text-myred"} flex w-full place-content-between items-center p-2 uppercase`}
                   >
                     Ver todos
+                    <FaPlus />
                   </button>
-                  <FaPlus />
                 </li>
                 {filtroPorAsientos.map((asientos, i) => (
-                  <li
-                    key={i}
-                    className={`${typeSitsSelected[0] == asientos.texto ? "bg-myred text-white" : ""} flex place-content-between items-center p-2`}
-                  >
+                  <li key={i}>
                     <button
                       onClick={() => {
                         setTypeSitsSelected([asientos.texto, i]);
+                        setCurrentPage(1);
                         toggleMenu();
                       }}
-                      className="uppercase"
+                      className={`${typeSitsSelected[0] == asientos.texto ? "bg-myred text-white" : ""} flex w-full place-content-between items-center p-2 uppercase`}
                     >
                       {asientos.texto}
+                      <FaPlus />
                     </button>
-                    <FaPlus />
                   </li>
                 ))}
               </ul>

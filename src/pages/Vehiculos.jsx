@@ -37,7 +37,7 @@ function Vehiculos({
           </h3>
         </div>
       </section>
-      <section className="flex place-content-center">
+      <section className="mb-10 flex place-content-center">
         <CarList
           carros={carros}
           allProductsinCart={allProductsinCart}

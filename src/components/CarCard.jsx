@@ -38,7 +38,7 @@ function CarCard({
       <div className="w-full">
         <img
           className="h-[12rem] w-full object-fill sm:h-[16rem] lg:h-[14rem] 2xl:h-[16rem]"
-          src={car.image}
+          src={car.image[0]}
           alt={`Imagen de ${car.name}`}
         />
       </div>

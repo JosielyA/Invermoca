@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/images/logo.png";
 import { FaCircleUser } from "react-icons/fa6";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropdown, IoMdMenu } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { FaXmark } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { encode } from "../data/whatsappurl";
+import { IoCodeSlashSharp } from "react-icons/io5";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { FaUserCircle } from "react-icons/fa";
 
 function Navbar({
   allProductsinCart,
@@ -16,8 +20,35 @@ function Navbar({
   countProducts,
   setCountProducts,
 }) {
+  const [isOpen, setIsOpen] = useState(true);
   const [active, setActive] = useState(false);
+  const [scrollfromtop, setScrollfromtop] = useState(false);
   const navigate = useNavigate();
+
+  const paginas = [
+    { nombre: "Home", ruta: "/" },
+    { nombre: "Vehículos", ruta: "/vehiculos" },
+    { nombre: "Limpieza", ruta: "/limpieza" },
+    { nombre: "Servicios", ruta: "/servicios" },
+    { nombre: "Ubicación", ruta: "/ubicacion" },
+  ];
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    if (position > 60) {
+      setScrollfromtop(true);
+    } else {
+      setScrollfromtop(false);
+    }
+  };
+  useEffect(() => {
+    Aos.init();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const onClearCart = () => {
     setTotal(0);
@@ -39,119 +70,47 @@ function Navbar({
     window.open(encode(mymessage), "_blank");
   };
   return (
-    <div>
-      <div className="navbarOne flex h-28 place-content-center items-center">
+    <div className={`z-50 w-full transition-all`}>
+      <div
+        className={`${scrollfromtop ? "h-14" : "h-24"} navbarOne flex h-28 place-content-center items-center bg-white transition-all duration-200`}
+      >
         <img src={logo} className="w-64" />
       </div>
-      <div className="flex flex-wrap items-center justify-around bg-darkblue p-2 text-sm font-medium uppercase text-white lg:h-20 lg:justify-between lg:p-0">
-        <div className="flex w-full flex-wrap place-content-center items-center gap-2 md:ml-20 md:w-auto lg:gap-5">
-          <div
-            className={`${countProducts > 0 ? "place-content-end" : "place-content-center"} fixed left-2 top-2 z-50 -mt-1 flex`}
+      <header
+        className={`${scrollfromtop ? "" : "static"} flex h-24 w-full items-center justify-between bg-darkblue pl-5 text-black transition-all duration-200 md:pl-14`}
+      >
+        <nav>
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="md:hidden"
           >
-            <button
-              onClick={() => setActive((prev) => !prev)}
-              className={`${countProducts > 0 ? "place-content-end text-black " : "h-[3rem] w-[3rem] place-content-center rounded-full bg-myred "} z-20 flex w-10`}
-            >
-              <BsCart4
-                className={`relative h-[2.7em] w-[2.7rem] self-center`}
-              />
-              <div
-                className={`${countProducts > 0 ? "" : "hidden"} ${active ? "bg-white text-black" : "bg-myred text-white"} absolute -mb-1 -mr-1 flex h-[1.3rem] w-[1.3rem] place-content-center items-center self-end rounded-full`}
-              >
-                <span className="text-sm">{countProducts}</span>
-              </div>
-            </button>
-            <div
-              className={`${active ? "" : "hidden"} absolute left-[1.8rem] top-[0.5rem] z-10 flex`}
-            >
-              <div className="-mr-[18rem] mt-[1rem] flex min-w-[20rem]  flex-col items-center rounded-md bg-myred p-2 normal-case text-white">
-                <h2 className="p-2 text-lg font-bold uppercase">Carrito</h2>
-                <div className="flex w-full flex-col gap-3 p-2">
-                  {allProductsinCart.length ? (
-                    <div>
-                      {allProductsinCart.map((product, i) => (
-                        <div
-                          key={product.id}
-                          className="flex place-content-around items-center"
-                        >
-                          <h2 className="w-1/6">{product.quantity}</h2>
-                          <h2 className="w-2/5">{product.name}</h2>
-                          <h2 className="w-2/6">
-                            {new Intl.NumberFormat("en-US", {
-                              style: "currency",
-                              currency: "USD",
-                            }).format(product.price)}
-                          </h2>
-                          <button
-                            className="w-1/12"
-                            onClick={() => onDelete(product)}
-                          >
-                            <FaXmark className="size-6" />
-                          </button>
-                        </div>
-                      ))}
-                      <div className="mt-2 flex flex-col items-center gap-2">
-                        <h2 className="">
-                          Total:{" "}
-                          {new Intl.NumberFormat("en-US", {
-                            style: "currency",
-                            currency: "USD",
-                          }).format(total)}
-                        </h2>
-                        <div className="flex gap-2">
-                          <button
-                            onClick={onClearCart}
-                            className="rounded-md bg-gray-300 px-4 py-2 text-black hover:bg-black hover:text-white"
-                          >
-                            Vaciar carrito
-                          </button>
-                          <button
-                            onClick={onBuy}
-                            className="text-bwhite rounded-md bg-green-500 px-4 py-2 transition-transform duration-100 ease-linear hover:scale-110"
-                          >
-                            Comprar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex place-content-center items-center">
-                      <h2>No hay productos.</h2>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          <Link to="/" className="flex items-center">
-            <span>Home</span>
-            <IoMdArrowDropdown className="ml-1 size-4" />
-          </Link>
-          <Link to="/limpieza" className="flex items-center">
-            <span>Limpieza</span>
-            <IoMdArrowDropdown className="ml-1 size-4" />
-          </Link>
-          <Link to="/vehiculos" className="flex items-center">
-            <span>Vehículos</span>
-            <IoMdArrowDropdown className="ml-1 size-4" />
-          </Link>
-          <Link to="/servicios" className="flex items-center">
-            <span>Servicios</span>
-            <IoMdArrowDropdown className="ml-1 size-4" />
-          </Link>
-          <Link to="/ubicacion" className="flex items-center">
-            <span>Ubicación</span>
-            <IoMdArrowDropdown className="ml-1 size-4" />
-          </Link>
-        </div>
-        <div className="flex w-full place-content-center items-center justify-self-end md:w-auto">
-          <Link>Iniciar Sesión</Link>
-          <Link className="ml-6 flex place-content-center items-center rounded-l-full rounded-r-full bg-myred py-[5px] pl-2 pr-5 md:py-[10px] lg:rounded-r-none">
-            <FaCircleUser className="mx-2 size-7" />
+            <IoMdMenu className="size-8 text-white" />
+          </button>
+          <ul
+            className={`${isOpen ? "translate-x-0 bg-white text-black md:text-white" : "-translate-x-full text-black md:text-white"} absolute left-0 right-0 z-50 min-h-screen transform space-y-4 p-4 transition duration-300 md:relative md:flex md:min-h-0 md:translate-x-0 md:space-x-6 md:space-y-0 md:bg-transparent md:p-0 md:text-xl`}
+          >
+            {paginas.map((pagina, i) => (
+              <li key={i}>
+                <Link
+                  className="flex items-center gap-2 text-base font-medium uppercase"
+                  onClick={() => setIsOpen(false)}
+                  to={pagina.ruta}
+                >
+                  {pagina.nombre}
+                  <IoMdArrowDropdown className="invisible size-5 md:visible" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="flex flex-wrap place-content-end items-center gap-2 text-white">
+          <button className="uppercase">Iniciar Sesión</button>
+          <button className="flex place-content-center items-center gap-2 rounded-l-full bg-myred px-5 py-3 uppercase">
+            <FaUserCircle className="size-6" />
             <span>Registrate</span>
-          </Link>
+          </button>
         </div>
-      </div>
+      </header>
       <Outlet />
     </div>
   );
