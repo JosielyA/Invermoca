@@ -20,7 +20,7 @@ function Navbar({
   countProducts,
   setCountProducts,
 }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState(false);
   const [scrollfromtop, setScrollfromtop] = useState(false);
   const navigate = useNavigate();
