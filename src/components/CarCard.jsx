@@ -34,7 +34,7 @@ function CarCard({
   };
 
   return (
-    <div className="flex w-full flex-col items-center bg-green-200 text-center md:w-[45%]">
+    <div className="flex w-full flex-col items-center text-center md:w-[45%]">
       <div className="w-full">
         <img
           className="h-[12rem] w-full object-fill sm:h-[16rem] lg:h-[14rem] 2xl:h-[16rem]"

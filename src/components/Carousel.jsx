@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ImWhatsapp } from "react-icons/im";
 import { encode } from "../data/whatsappurl";
@@ -37,12 +37,16 @@ export const Carousel = ({ car, setViewCar }) => {
         <p className="text-base font-light uppercase md:text-xl">
           {car.description}
         </p>
-        <h2 className="text-4xl font-bold md:text-5xl">
-          {new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-          }).format(car.price)}
-        </h2>
+        {car.price ? (
+          <h2 className="text-4xl font-bold md:text-5xl">
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(car.price)}
+          </h2>
+        ) : (
+          ""
+        )}
       </div>
       <div className="flex w-full place-content-between items-center overflow-hidden md:w-11/12">
         <button>
@@ -100,7 +104,7 @@ export const Carousel = ({ car, setViewCar }) => {
                 className="z-0 block aspect-video h-full w-full bg-cover bg-left-top "
                 style={{ backgroundImage: `url(${image})` }}
               >
-                <img src={image} className="hidden aspect-video w-full" />
+                <img src={image} className="aspect-video w-full" />
               </div>
             </div>
           ))}
@@ -114,7 +118,7 @@ export const Carousel = ({ car, setViewCar }) => {
           </button>
           <a
             href={encode(
-              `Hola, quiero informacion del carro '${car.name}' que está a la venta en su pagina web.`,
+              `Hola, quiero informacion del carro '${car.marca} ${car.name}' que está a la venta en su pagina web.`,
             )}
             target="_blank"
             className="whats1 boton mb-5 gap-3 px-6 py-2 text-lg md:px-10 md:py-4 md:text-3xl"

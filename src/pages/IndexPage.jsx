@@ -44,26 +44,6 @@ function IndexPage({
     },
   ];
 
-  const onAdd = (product) => {
-    const alreadyInProduct = allProductsinCart.find(
-      (item) => item.id === product.id,
-    );
-    if (alreadyInProduct) {
-      const products = allProductsinCart.map((item) =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item,
-      );
-      setTotal(total + alreadyInProduct.price);
-      setCountProducts(countProducts + 1);
-      return setAllProductsinCart([...products]);
-    }
-    const newProduct = { ...product, quantity: 1 };
-    setTotal(total + product.price);
-    setCountProducts(countProducts + 1);
-    setAllProductsinCart([...allProductsinCart, newProduct]);
-  };
-
   return (
     <div>
       <section className="relative w-full overflow-hidden ">
