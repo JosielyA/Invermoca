@@ -1,12 +1,3 @@
-import toyotacamry1 from "../assets/cars/toyotacamry/WhatsApp Image 2024-04-02 at 8.19.28 AM (1).jpeg";
-import toyotacamry2 from "../assets/cars/toyotacamry/WhatsApp Image 2024-04-02 at 8.19.28 AM (2).jpeg";
-import toyotacamry3 from "../assets/cars/toyotacamry/WhatsApp Image 2024-04-02 at 8.19.28 AM.jpeg";
-import toyotacamry4 from "../assets/cars/toyotacamry/WhatsApp Image 2024-04-02 at 8.19.29 AM.jpeg";
-import chevroletcruz1 from "../assets/cars/chevroletcruz/07ba1879-ace2-4c59-b925-61b1d4605503.jpeg";
-import chevroletcruz2 from "../assets/cars/chevroletcruz/76757238-3a3b-4061-8b91-b04df0b5373b.jpeg";
-import chevroletcruz3 from "../assets/cars/chevroletcruz/78ca34ab-5d18-4d8b-b902-b929aa27d541.jpeg";
-import chevroletcruz4 from "../assets/cars/chevroletcruz/8fda446f-f198-43ff-9ad2-20b21eff7811.jpeg";
-import chevroletcruz5 from "../assets/cars/chevroletcruz/d834211d-4ae4-41de-86cc-85704ddc5574.jpeg";
 import dodgeram1 from "../assets/cars/dodgeram/WhatsApp Image 2024-03-21 at 5.47.20 PM (1).jpeg";
 import dodgeram2 from "../assets/cars/dodgeram/WhatsApp Image 2024-03-21 at 5.47.20 PM (2).jpeg";
 import dodgeram3 from "../assets/cars/dodgeram/WhatsApp Image 2024-03-21 at 5.47.20 PM (3).jpeg";
@@ -18,29 +9,11 @@ import aveolt2 from "../assets/cars/aveolt/WhatsApp Image 2024-03-20 at 5.12.25 
 import aveolt3 from "../assets/cars/aveolt/WhatsApp Image 2024-03-20 at 5.12.26 PM (1).jpeg";
 import aveolt4 from "../assets/cars/aveolt/WhatsApp Image 2024-03-20 at 5.12.26 PM.jpeg";
 import aveolt5 from "../assets/cars/aveolt/WhatsApp Image 2024-03-20 at 5.14.22 PM.jpeg";
+import toyotatacoma1 from "../assets/cars/toyotatacoma/image0.jpeg";
+import toyotatacoma2 from "../assets/cars/toyotatacoma/image1.jpeg";
+import toyotatacoma3 from "../assets/cars/toyotatacoma/image2.jpeg";
 
 export const carros = [
-  {
-    id: 0,
-    name: "Camry",
-    marca: "Toyota",
-    description: "2007 // 128.000 KM // TITULO 2-1",
-    image: [toyotacamry1, toyotacamry2, toyotacamry3, toyotacamry4],
-  },
-  {
-    id: 1,
-    name: "Cruz",
-    marca: "Chevrolet",
-    price: 10000,
-    description: "AUTOMATICO // 2015 // 5 PUESTOS // 160.000 KM",
-    image: [
-      chevroletcruz2,
-      chevroletcruz1,
-      chevroletcruz3,
-      chevroletcruz4,
-      chevroletcruz5,
-    ],
-  },
   {
     id: 2,
     name: "Ram",
@@ -66,6 +39,13 @@ export const carros = [
     price: 12500,
     description: "NUEVO // 2015 // 55000 KMS // 2-1 // 5 PUESTOS",
     image: [aveolt2, aveolt4, aveolt1, aveolt5, aveolt3],
+  },
+  {
+    id: 5,
+    name: "Tacoma",
+    marca: "Toyota",
+    description: "57.000 KM",
+    image: [toyotatacoma2, toyotatacoma1, toyotatacoma3],
   },
 ];
 

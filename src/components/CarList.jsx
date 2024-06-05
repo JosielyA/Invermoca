@@ -164,6 +164,40 @@ function CarList({
               </ul>
             </section>
           </section>
+          <section className="mt-3">
+            <section className="max-h-[500px] overflow-y-scroll border-2 p-4">
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    onClick={() => {
+                      setTypeFilterSelected("");
+                      setCurrentPage(1);
+                      toggleMenu();
+                    }}
+                    className={`${!typeFilterSelected ? "bg-myred text-white" : "text-myred"} flex w-full place-content-between items-center p-2 uppercase`}
+                  >
+                    Ver todos
+                    <FaPlus />
+                  </button>
+                </li>
+                {carsTypes.map((tipo, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={() => {
+                        setTypeFilterSelected(tipo);
+                        setCurrentPage(1);
+                        toggleMenu();
+                      }}
+                      className={`${typeFilterSelected == tipo ? "bg-myred text-white" : ""} flex w-full place-content-between items-center p-2 uppercase`}
+                    >
+                      {tipo}
+                      <FaPlus />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </section>
         </aside>
 
         <div className="w-[75%] md:md:w-[65%]">

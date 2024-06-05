@@ -8,9 +8,8 @@ import Footer from "../components/Footer";
 function Servicios() {
   return (
     <div>
-      <div>
-        <img src={fondo} />
-      </div>
+      <section className="serviciosbackground flex h-[400px] place-content-center items-center text-white md:h-screen "></section>
+
       <div>
         <div className="flex place-content-center items-center py-8">
           <h2 className="text-6xl font-bold uppercase text-myred">Servicios</h2>

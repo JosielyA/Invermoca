@@ -46,19 +46,14 @@ function IndexPage({
 
   return (
     <div>
-      <section className="relative w-full overflow-hidden ">
-        <img
-          src={conductor}
-          className="h-full w-full brightness-50 contrast-200 filter md:filter-none"
-        />
-        <div className="absolute top-[200px] m-5 flex -translate-y-full transform flex-col gap-2 text-center text-white md:left-[100px] md:top-[450px] md:gap-8 md:text-start lg:top-[550px] 2xl:top-[880px]">
-          <h2 className="text-2xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] md:w-7/12 md:text-6xl 2xl:w-8/12 2xl:text-[120px]">
+      <section className="homebackground flex place-content-center items-center text-white md:h-screen ">
+        <div className="p-20 text-center sm:w-10/12 lg:w-9/12 lg:p-0 lg:text-start">
+          <h2 className="mb-4 text-xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] sm:text-2xl md:text-4xl lg:w-9/12 lg:text-6xl 2xl:text-9xl">
             ¡Bienvenido a <span className="text-myred">Invermoca</span>!
           </h2>
-          <h3 className="text-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] md:w-5/12 xl:w-7/12 xl:text-2xl 2xl:w-5/12 2xl:text-4xl ">
-            Encuentra el vehículo perfecto para ti con nuestras opciones de
-            compra, venta y consignación de vehículos usados y nuevos, junto con
-            una amplia gama de accesorios y respuestos disponibles.
+          <h3 className="text-base drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] sm:text-lg md:text-2xl lg:w-8/12 2xl:text-4xl">
+            Encontrar el vehículo ideal que se adapte a tu estilo de vida, nunca
+            había sido tan fácil.
           </h3>
         </div>
       </section>
