@@ -24,8 +24,18 @@ body {
   background-position: center;
 }
 
-.homebackground {
+.homeslider1 {
   background-image: url(./assets/images/backgrounds/DSC_0045.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.homeslider2 {
+  background-image: url(./assets/images/backgrounds/DSC_0260.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.homeslider3 {
+  background-image: url(./assets/images/backgrounds/DSC_0281.jpg);
   background-size: cover;
   background-position: center;
 }

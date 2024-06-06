@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+
 import Footer from "../components/Footer";
-import conductor from "../assets/images/backgrounds/DSC_0045.jpg";
+import Slider from "../components/Slider";
 import vehiculos from "../assets/images/backgrounds/DSC_0083.jpg";
 import autonegro from "../assets/images/autonegro.png";
 import repuestos from "../assets/images/backgrounds/DSC_0469.jpg";
 import accesorios from "../assets/images/backgrounds/DSC_0357.jpg";
-import azul from "../assets/images/azul.jpeg";
 import productosDeCalidad from "../assets/images/backgrounds/DSC_0494.jpg";
-import carro from "../assets/images/backgrounds/DSC_0171.jpg";
 import { ImWhatsapp } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
 import { MdLocalCarWash } from "react-icons/md";
@@ -46,17 +45,8 @@ function IndexPage({
 
   return (
     <div>
-      <section className="homebackground flex place-content-center items-center text-white md:h-screen ">
-        <div className="p-20 text-center sm:w-10/12 lg:w-9/12 lg:p-0 lg:text-start">
-          <h2 className="mb-4 text-xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] sm:text-2xl md:text-4xl lg:w-9/12 lg:text-6xl 2xl:text-9xl">
-            ¡Bienvenido a <span className="text-myred">Invermoca</span>!
-          </h2>
-          <h3 className="text-base drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] sm:text-lg md:text-2xl lg:w-8/12 2xl:text-4xl">
-            Encontrar el vehículo ideal que se adapte a tu estilo de vida, nunca
-            había sido tan fácil.
-          </h3>
-        </div>
-      </section>
+      <Slider />
+      
       <section className="overflow-hidden py-10 md:p-14">
         <div className="">
           <div className="mb-10 flex place-content-center items-center text-center">
