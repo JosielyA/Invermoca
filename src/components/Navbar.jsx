@@ -103,7 +103,7 @@ function Navbar({
             ))}
           </ul>
         </nav>
-        <div className="flex flex-wrap place-content-end items-center gap-2 text-white">
+        <div className="flex flex-wrap place-content-end items-center gap-2 text-white md:invisible lg:visible">
           <button className="uppercase">Iniciar Sesión</button>
           <button className="flex place-content-center items-center gap-2 rounded-l-full bg-myred px-5 py-3 uppercase">
             <FaUserCircle className="size-6" />

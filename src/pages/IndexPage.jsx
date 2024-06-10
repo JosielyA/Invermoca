@@ -2,17 +2,22 @@ import React, { useRef, useState } from "react";
 
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
-import vehiculos from "../assets/images/backgrounds/DSC_0083.jpg";
+
 import autonegro from "../assets/images/autonegro.png";
-import repuestos from "../assets/images/backgrounds/DSC_0469.jpg";
-import accesorios from "../assets/images/backgrounds/DSC_0357.jpg";
-import productosDeCalidad from "../assets/images/backgrounds/DSC_0494.jpg";
+
+import vehiculos from "../assets/images/backgrounds/homepage/servicios/DSC_0083.jpg";
+import repuestos from "../assets/images/backgrounds/homepage/servicios/DSC_0469.jpg";
+import accesorios from "../assets/images/backgrounds/homepage/servicios/DSC_0357.jpg";
+
+import productosDeCalidad from "../assets/images/backgrounds/servicespage/DSC_0494.jpg";
+
 import { ImWhatsapp } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
 import { MdLocalCarWash } from "react-icons/md";
 import { servicios } from "../data/carsData";
 import { encode } from "../data/whatsappurl";
 import { Link } from "react-router-dom";
+import { indexPageSliders } from "../libs/slidersData";
 
 function IndexPage({
   allProductsinCart,
@@ -45,8 +50,8 @@ function IndexPage({
 
   return (
     <div>
-      <Slider />
-      
+      <Slider slides={indexPageSliders} />
+
       <section className="overflow-hidden py-10 md:p-14">
         <div className="">
           <div className="mb-10 flex place-content-center items-center text-center">

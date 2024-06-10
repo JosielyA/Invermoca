@@ -92,7 +92,10 @@ function Footer() {
   return (
     <div>
       <section className="bg-automotriz flex flex-col place-content-center items-center text-white">
-        <div className="lg:flex lg:place-content-around lg:items-center">
+        <div
+          id="footer"
+          className="lg:flex lg:place-content-around lg:items-center"
+        >
           <div className=" flex flex-col items-center lg:w-1/2 lg:p-14">
             <div className="w-96  p-5 pt-8">
               <img src={logo} />

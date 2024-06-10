@@ -6,6 +6,12 @@ body {
   min-width: 380px;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 .pricespage {
   background-image: url(./assets/images/backgrounds/bg-prices-page.png);
   background-size: contain;
@@ -18,24 +24,40 @@ body {
   background-position: center;
 }
 
-.vehiculos {
-  background-image: url(./assets/images/backgrounds//DSC_0236.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
 .homeslider1 {
-  background-image: url(./assets/images/backgrounds/DSC_0045.jpg);
-  background-size: cover;
-  background-position: center;
+  background-image: url(./assets/images/backgrounds/homepage/DSC_0045.jpg);
 }
 .homeslider2 {
-  background-image: url(./assets/images/backgrounds/DSC_0260.jpg);
-  background-size: cover;
-  background-position: center;
+  background-image: url(./assets/images/backgrounds/homepage/DSC_0236.jpg);
 }
 .homeslider3 {
-  background-image: url(./assets/images/backgrounds/DSC_0281.jpg);
+  background-image: url(./assets/images/backgrounds/homepage/DSC_0281.jpg);
+}
+.homeslider4 {
+  background-image: url(./assets/images/backgrounds/homepage/DSC_0270.jpg);
+}
+
+.carslider1 {
+  background-image: url(./assets/images/backgrounds/carspage/image1.jpeg);
+}
+.carslider2 {
+  background-image: url(./assets/images/backgrounds/carspage/image2.jpeg);
+}
+.carslider3 {
+  background-image: url(./assets/images/backgrounds/carspage/image3.jpeg);
+}
+
+.serviceslider1 {
+  background-image: url(./assets/images/backgrounds/servicespage/DSC_0199.jpg);
+}
+.serviceslider2 {
+  background-image: url(./assets/images/backgrounds/servicespage/DSC_0030.jpg);
+}
+.serviceslider3 {
+  background-image: url(./assets/images/backgrounds/servicespage/DSC_0260.jpg);
+}
+
+.sliderimage {
   background-size: cover;
   background-position: center;
 }

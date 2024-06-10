@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaPlus } from "react-icons/fa6";
+import { numberToUSD, numberToKilometers } from "../libs/formatters";
 
 export const CarsFilters = ({
   carros,
@@ -15,15 +15,43 @@ export const CarsFilters = ({
   const [stateCarSelected, setStateCarSelected] = useState("");
   const [brandCarSelected, setBrandCarSelected] = useState("");
   const [modelCarSelected, setModelCarSelected] = useState("");
+  const [priceCarSelected, setPriceCarSelected] = useState("");
+  const [kilCarSelected, setKilCarSelected] = useState("");
   const CarTypeMenuItems = [...new Set(carros.map((car) => car.type))];
-  const CarYearMenuItems = [...new Set(carros.map((car) => car.year))];
-  const CarStateMenuItems = [...new Set(carros.map((car) => car.state))];
-  const CarBrandMenuItems = [...new Set(carros.map((car) => car.marca))];
-  const CarModelMenuItems = [...new Set(carros.map((car) => car.name))];
+  const CarYearMenuItems = [...new Set(carros.map((car) => car.year))].sort(
+    (a, b) => a - b,
+  );
+  const CarStateMenuItems = ["Nuevo", "Usado"];
+  const CarBrandMenuItems = [...new Set(carros.map((car) => car.marca))].sort();
+  const CarModelMenuItems = [...new Set(carros.map((car) => car.name))].sort();
+  const CarPriceMenuItems = ["1000,10000", "10000,20000", "20000,30000"];
+  const CarKilMenuItems = [
+    "0,50000",
+    "50000,100000",
+    "100000,150000",
+    "150000,200000",
+  ];
+  const states = [
+    typeCarSelected,
+    yearCarSelected,
+    stateCarSelected,
+    brandCarSelected,
+    modelCarSelected,
+  ];
+  const othersStates = [priceCarSelected, kilCarSelected];
+  const handlers = {
+    year: setYearCarSelected,
+    state: setStateCarSelected,
+    brand: setBrandCarSelected,
+    model: setModelCarSelected,
+    price: setPriceCarSelected,
+    kil: setKilCarSelected,
+  };
 
   const filterByType = (autos) => {
     return autos.filter(
-      (car) => car.type.toLowerCase() == typeCarSelected.toLowerCase(),
+      (car) =>
+        car.type && car.type.toLowerCase() == typeCarSelected.toLowerCase(),
     );
   };
   const filterByYear = (autos) => {
@@ -32,17 +60,36 @@ export const CarsFilters = ({
 
   const filterByState = (autos) => {
     return autos.filter(
-      (car) => car.state.toLowerCase() == stateCarSelected.toLowerCase(),
+      (car) =>
+        car.state && car.state.toLowerCase() == stateCarSelected.toLowerCase(),
     );
   };
   const filterByBrand = (autos) => {
     return autos.filter(
-      (car) => car.marca.toLowerCase() == brandCarSelected.toLowerCase(),
+      (car) =>
+        car.marca && car.marca.toLowerCase() == brandCarSelected.toLowerCase(),
     );
   };
   const filterByModel = (autos) => {
     return autos.filter(
-      (car) => car.name.toLowerCase() == modelCarSelected.toLowerCase(),
+      (car) =>
+        car.name && car.name.toLowerCase() == modelCarSelected.toLowerCase(),
+    );
+  };
+  const filterByPrice = (autos) => {
+    const firstNumberRange = Number(priceCarSelected.split(",")[0]);
+    const secondNumberRange = Number(priceCarSelected.split(",")[1]);
+    return autos.filter(
+      (car) => car.price >= firstNumberRange && car.price <= secondNumberRange,
+    );
+  };
+  const filterByKil = (autos) => {
+    const firstNumberRange = Number(kilCarSelected.split(",")[0]);
+    const secondNumberRange = Number(kilCarSelected.split(",")[1]);
+    return autos.filter(
+      (car) =>
+        car.kilometraje >= firstNumberRange &&
+        car.kilometraje <= secondNumberRange,
     );
   };
 
@@ -65,69 +112,69 @@ export const CarsFilters = ({
     if (modelCarSelected) {
       allFilteredCars = filterByModel(allFilteredCars);
     }
+    if (priceCarSelected) {
+      allFilteredCars = filterByPrice(allFilteredCars);
+    }
+    if (kilCarSelected) {
+      allFilteredCars = filterByKil(allFilteredCars);
+    }
     setFilteredCars(allFilteredCars);
   };
 
-  const handleYearChange = (e) => {
-    setYearCarSelected((prev) => e.target.value);
-    setCurrentPage(1);
-    toggleMenu();
+  const clearFilters = () => {
+    setTypeCarSelected("");
+    setYearCarSelected("");
+    setStateCarSelected("");
+    setBrandCarSelected("");
+    setModelCarSelected("");
+    setPriceCarSelected("");
+    setKilCarSelected("");
   };
-  const handleStateChange = (e) => {
-    setStateCarSelected((prev) => e.target.value);
-    setCurrentPage(1);
-    toggleMenu();
-  };
-  const handleBrandChange = (e) => {
-    setBrandCarSelected((prev) => e.target.value);
-    setCurrentPage(1);
-    toggleMenu();
-  };
-  const handleModelChange = (e) => {
-    setModelCarSelected((prev) => e.target.value);
-    setCurrentPage(1);
-    toggleMenu();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    handlers[name]((prev) => value);
   };
 
   useEffect(() => {
     filter();
+    setCurrentPage(1);
+    toggleMenu();
   }, [
     typeCarSelected,
     yearCarSelected,
     stateCarSelected,
     brandCarSelected,
     modelCarSelected,
+    priceCarSelected,
+    kilCarSelected,
   ]);
 
   return (
     <aside className={`static mb-5 mt-5 w-10/12 md:w-1/3`}>
       <div
-        className={`${typeCarSelected || yearCarSelected || stateCarSelected || brandCarSelected || modelCarSelected ? "mb-2 flex items-center gap-2 text-black" : "hidden"}`}
+        className={`${states.some((str) => str !== "") || othersStates.some((str) => str !== "") ? "mb-2 flex flex-wrap items-center gap-2 text-black" : "hidden"}`}
       >
+        {states.map((elemento, i) => (
+          <h2
+            key={i}
+            className={`${elemento ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
+          >
+            {elemento}
+          </h2>
+        ))}
+
         <h2
-          className={`${typeCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
+          className={`${priceCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
         >
-          {typeCarSelected}
+          {numberToUSD.format(priceCarSelected.split(",")[0])} -{" "}
+          {numberToUSD.format(priceCarSelected.split(",")[1])}
         </h2>
         <h2
-          className={`${yearCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
+          className={`${kilCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
         >
-          {yearCarSelected}
-        </h2>
-        <h2
-          className={`${stateCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
-        >
-          {stateCarSelected}
-        </h2>
-        <h2
-          className={`${brandCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
-        >
-          {brandCarSelected}
-        </h2>
-        <h2
-          className={`${modelCarSelected ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white" : "hidden"}`}
-        >
-          {modelCarSelected}
+          {numberToKilometers.format(kilCarSelected.split(",")[0])} -{" "}
+          {numberToKilometers.format(kilCarSelected.split(",")[1])}
         </h2>
       </div>
       <section className="">
@@ -140,9 +187,6 @@ export const CarsFilters = ({
               <button
                 onClick={() => {
                   setTypeCarSelected("");
-                  setCurrentPage(1);
-                  toggleMenu();
-                  filter();
                 }}
                 className={`${!typeCarSelected ? "bg-myred text-white" : "text-myred"} flex w-full place-content-start items-center p-2 uppercase`}
               >
@@ -154,8 +198,6 @@ export const CarsFilters = ({
                 <button
                   onClick={() => {
                     setTypeCarSelected((prev) => tipo);
-                    setCurrentPage(1);
-                    toggleMenu();
                   }}
                   className={`${typeCarSelected == tipo ? "bg-myred text-white" : ""} flex w-full place-content-start items-center p-2 uppercase`}
                 >
@@ -168,7 +210,8 @@ export const CarsFilters = ({
         <section className="flex max-h-[500px] flex-col space-y-2 overflow-y-scroll border-x-2 border-b-2 p-4">
           <select
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5"
-            onChange={handleYearChange}
+            name="year"
+            onChange={handleChange}
             value={yearCarSelected}
           >
             <option value="">Año</option>
@@ -184,7 +227,8 @@ export const CarsFilters = ({
           </select>
           <select
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5"
-            onChange={handleStateChange}
+            name="state"
+            onChange={handleChange}
             value={stateCarSelected}
           >
             <option value="">Estado</option>
@@ -200,7 +244,8 @@ export const CarsFilters = ({
           </select>
           <select
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5"
-            onChange={handleBrandChange}
+            onChange={handleChange}
+            name="brand"
             value={brandCarSelected}
           >
             <option value="">Marca</option>
@@ -216,9 +261,8 @@ export const CarsFilters = ({
           </select>
           <select
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5"
-            name="type"
-            id="type"
-            onChange={handleModelChange}
+            name="model"
+            onChange={handleChange}
             value={modelCarSelected}
           >
             <option value="">Modelo</option>
@@ -232,8 +276,52 @@ export const CarsFilters = ({
               ),
             )}
           </select>
+          <select
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5"
+            name="price"
+            onChange={handleChange}
+            value={priceCarSelected}
+          >
+            <option value="">Rango de precios</option>
+            {CarPriceMenuItems.map((rango, i) =>
+              rango ? (
+                <option key={i} value={rango}>
+                  {numberToUSD.format(rango.split(",")[0])} -{" "}
+                  {numberToUSD.format(rango.split(",")[1])}
+                </option>
+              ) : (
+                ""
+              ),
+            )}
+          </select>
+          <select
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5"
+            name="kil"
+            onChange={handleChange}
+            value={kilCarSelected}
+          >
+            <option value="">Rango de kilometraje</option>
+            {CarKilMenuItems.map((rango, i) =>
+              rango ? (
+                <option key={i} value={rango}>
+                  {numberToKilometers.format(rango.split(",")[0])} -{" "}
+                  {numberToKilometers.format(rango.split(",")[1])}
+                </option>
+              ) : (
+                ""
+              ),
+            )}
+          </select>
         </section>
       </section>
+      <div className="m-3 flex place-content-center items-center">
+        <button
+          onClick={clearFilters}
+          className={`${states.some((str) => str !== "") || othersStates.some((str) => str !== "") ? "rounded-md  bg-myred p-2 font-semibold uppercase text-white " : "hidden"}`}
+        >
+          Limpiar filtros
+        </button>
+      </div>
     </aside>
   );
 };

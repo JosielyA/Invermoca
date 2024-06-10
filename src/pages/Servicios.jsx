@@ -1,14 +1,17 @@
 import React from "react";
-import fondo from "../assets/images/backgrounds/DSC_0270.jpg";
-import lavado from "../assets/images/backgrounds/DSC_0030.jpg";
-import mecanica from "../assets/images/backgrounds/DSC_0494.jpg";
-import pintura from "../assets/images/backgrounds/DSC_0199.jpg";
+import lavado from "../assets/images/backgrounds/servicespage/DSC_0030.jpg";
+import mecanica from "../assets/images/backgrounds/servicespage/DSC_0494.jpg";
+import pintura from "../assets/images/backgrounds/servicespage/DSC_0199.jpg";
 import Footer from "../components/Footer";
+import Slider from "../components/Slider";
+import { servicesPageSliders } from "../libs/slidersData";
 
 function Servicios() {
   return (
     <div>
-      <section className="serviciosbackground flex h-[400px] place-content-center items-center text-white md:h-screen "></section>
+      <section className="serviciosbackground flex h-[400px] place-content-center items-center text-white md:h-screen ">
+        <Slider slides={servicesPageSliders} />
+      </section>
 
       <div>
         <div className="flex place-content-center items-center py-8">

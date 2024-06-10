@@ -1,4 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import {
+  numberToKilometers,
+  numberToUSD,
+  numberToUSDFractions,
+} from "../libs/formatters";
 
 import { ImWhatsapp } from "react-icons/im";
 import { encode } from "../data/whatsappurl";
@@ -29,20 +34,24 @@ export const Carousel = ({ car, setViewCar }) => {
 
   return (
     <div className="mt-5 flex flex-col items-center gap-8 sm:py-10">
-      <div className="flex w-7/12 flex-col place-content-center items-center space-y-4 text-center md:w-10/12">
-        <div className="flex w-full flex-wrap place-content-around items-center space-x-5 text-xl font-bold uppercase text-myred sm:text-2xl md:text-4xl lg:text-6xl xl:space-x-12 2xl:text-6xl">
-          <h2>Marca:{car.marca}</h2>
-          <h2>Modelo:{car.name}</h2>
+      <div className="flex w-7/12 flex-col place-content-center items-center text-center md:w-10/12">
+        <div className="mb-4 flex w-full flex-wrap place-content-center items-center">
+          <h2 className="text-xl font-bold uppercase text-myred sm:text-2xl md:text-4xl lg:text-6xl 2xl:text-6xl">
+            {car.marca} {car.name}
+          </h2>
         </div>
-        <p className="text-base font-light uppercase md:text-xl">
+        <p
+          className={`${car.type || car.kilometraje || car.year ? "text-base font-light uppercase md:text-xl" : ""}`}
+        >
+          {car.type ? `${car.type} //` : ""} {car.year ? `${car.year} //` : ""}{" "}
+          {car.kilometraje ? numberToKilometers.format(car.kilometraje) : ""}{" "}
+        </p>
+        <p className="mb-4 text-base font-light uppercase md:text-xl">
           {car.description}
         </p>
         {car.price ? (
           <h2 className="text-4xl font-bold md:text-5xl">
-            {new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD",
-            }).format(car.price)}
+            {numberToUSDFractions.format(car.price)}
           </h2>
         ) : (
           ""
