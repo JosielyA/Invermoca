@@ -56,10 +56,10 @@ function IndexPage({
         <div className="">
           <div className="mb-10 flex place-content-center items-center text-center">
             <div className="flex flex-col items-center gap-4">
-              <h2 className="text-3xl font-bold text-myred md:text-5xl">
+              <h2 className="text-3xl font-bold text-myred md:text-5xl xl:text-7xl">
                 Los mejores vehículos
               </h2>
-              <h3 className="w-11/12 px-10 text-lg md:w-10/12 md:px-0 md:text-2xl">
+              <h3 className="w-11/12 px-10 text-lg md:w-10/12 md:px-0 md:text-2xl xl:text-4xl">
                 Encontrar el vehículo ideal que se adapte a tu estilo de vida,
                 nunca había sido tan fácil.
               </h3>
@@ -75,10 +75,10 @@ function IndexPage({
                   <img src={service.imagen} className="rounded-lg" />
                 </div>
                 <div className="">
-                  <h2 className="mb-2 text-4xl font-bold text-myred">
+                  <h2 className="mb-2 text-4xl font-bold text-myred xl:text-5xl">
                     {service.titulo}
                   </h2>
-                  <p className="no-scrollbar h-[120px] overflow-y-scroll pb-4 text-xl  md:h-[120px] ">
+                  <p className="no-scrollbar h-[120px] overflow-y-scroll pb-4 text-xl  md:h-[120px] xl:text-2xl">
                     {service.texto}
                   </p>
                 </div>
@@ -91,16 +91,16 @@ function IndexPage({
         <div className="flex h-full items-center">
           <div className="absolute flex min-w-[380px] place-content-center bg-black/40 p-4 text-center text-white backdrop-blur-sm md:backdrop-blur-0 lg:ml-[8rem] lg:bg-transparent lg:text-start">
             <div className="w-full">
-              <h2 className="text-3xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:w-[50%] lg:text-[60px] lg:leading-[75px]">
+              <h2 className="text-3xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:w-[50%] lg:text-7xl lg:leading-[75px] 2xl:text-8xl">
                 Ofrecemos
               </h2>
-              <h2 className="text-3xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:text-[60px] lg:leading-[75px]">
+              <h2 className="text-3xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:text-7xl lg:leading-[75px] 2xl:text-8xl">
                 productos de <span className="text-myred">calidad</span>
               </h2>
-              <h1 className="text-3xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:w-full lg:text-[60px] lg:leading-[75px]">
+              <h1 className="text-3xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:w-full lg:text-7xl lg:leading-[75px] 2xl:text-8xl">
                 respaldados por <span className="text-myred">garantías.</span>
               </h1>
-              <p className="mt-4 text-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] lg:w-[50%] 2xl:text-2xl">
+              <p className="mt-4 text-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] md:text-2xl lg:w-[50%] 2xl:text-4xl">
                 Explora nuestras secciones ahora y descubre los vehículos y
                 repuestos que mejorarán tu experiencia automotriz.
               </p>
@@ -125,10 +125,10 @@ function IndexPage({
               <div key={i} className="flex items-center gap-4">
                 <div className="h-14 w-14 rounded-full bg-myred xl:h-16 xl:w-16"></div>
                 <div className="w-9/12">
-                  <h2 className="text-2xl font-semibold italic text-myred xl:text-3xl">
+                  <h2 className="text-2xl font-semibold italic text-myred xl:text-4xl">
                     {service.name}
                   </h2>
-                  <p className="text-[13px] font-thin xl:w-10/12 xl:text-base">
+                  <p className="text-[13px] font-thin xl:w-10/12 xl:text-lg">
                     {service.description}
                   </p>
                   <div className="flex gap-4">

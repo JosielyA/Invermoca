@@ -9,7 +9,7 @@ import { servicesPageSliders } from "../libs/slidersData";
 function Servicios() {
   return (
     <div>
-      <section className="serviciosbackground flex h-[400px] place-content-center items-center text-white md:h-screen ">
+      <section className="serviciosbackground flex place-content-center items-center text-white">
         <Slider slides={servicesPageSliders} />
       </section>
 
@@ -20,8 +20,8 @@ function Servicios() {
         <div className="grid flex-wrap lg:grid-cols-3">
           <div className="group relative">
             <img src={lavado} className="object-cover" />
-            <div className="absolute inset-0 bg-myred opacity-80" />
-            <div className="absolute bottom-0 right-0 mb-9 ml-3 flex h-14 w-11/12  place-content-center items-center bg-white p-3 text-center text-sm font-thin text-myred transition-transform group-hover:scale-105 lg:mb-3">
+            <div className="absolute inset-0 bg-myred opacity-70 transition-all duration-500 hover:bg-opacity-15" />
+            <div className="absolute bottom-0 right-0 mb-9 ml-3 flex h-14 w-11/12  place-content-center items-center bg-white p-3 text-center text-sm font-thin text-myred transition-transform group-hover:scale-105 md:text-lg lg:mb-3">
               <p className="pr-3">
                 Pulilavado, lavado de chasis y motor, latoneria.
               </p>
@@ -29,15 +29,15 @@ function Servicios() {
           </div>
           <div className="group relative">
             <img src={mecanica} alt="Image 2" className="object-cover" />
-            <div className="absolute inset-0 bg-white opacity-80" />
-            <div className="absolute bottom-0 right-0 mb-9 ml-5 flex h-14 w-11/12 place-content-center items-center bg-myred p-3  text-center text-sm font-thin text-white transition-transform group-hover:scale-105 lg:mb-3">
+            <div className="absolute inset-0 bg-white opacity-70 transition-all duration-500 hover:bg-opacity-15" />
+            <div className="absolute bottom-0 right-0 mb-9 ml-5 flex h-14 w-11/12 place-content-center items-center bg-myred p-3  text-center text-sm font-thin text-white transition-transform group-hover:scale-105 md:text-lg lg:mb-3">
               <p className="pr-3">Servicios de mecanica ligera y pesada.</p>
             </div>
           </div>
           <div className="group relative">
             <img src={pintura} alt="Image 3" className="object-cover" />
-            <div className="absolute inset-0 bg-black opacity-80" />
-            <div className="absolute bottom-0 right-0 mb-9 ml-3 flex h-14 w-11/12 place-content-center items-center bg-white p-3 text-center text-sm font-thin text-black transition-transform group-hover:scale-105 lg:mb-3">
+            <div className="absolute inset-0 bg-black opacity-70 transition-all duration-500 hover:bg-opacity-15" />
+            <div className="absolute bottom-0 right-0 mb-9 ml-3 flex h-14 w-11/12 place-content-center items-center bg-white p-3 text-center text-sm font-thin text-black transition-transform group-hover:scale-105 md:text-lg lg:mb-3">
               <p className="pr-3">Pintura automotriz</p>
             </div>
           </div>

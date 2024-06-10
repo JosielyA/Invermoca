@@ -7,35 +7,29 @@ function Ubicacion() {
   return (
     <div>
       <section
-        className="flex min-h-[500px] place-content-center items-center bg-cover bg-center uppercase text-white md:min-h-[800px] lg:min-h-screen"
+        className="flex min-h-[500px] flex-col place-content-center items-center bg-cover bg-center uppercase text-white md:min-h-[800px] lg:min-h-screen"
         style={{ backgroundImage: `url(${ubicacion})` }}
       >
-        <div className="flex w-full flex-col items-center gap-4 p-10 sm:w-10/12 lg:w-6/12">
-          <h2 className="text-center text-4xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-            ¿Dónde estamos?
-          </h2>
-          <div className="flex w-full gap-4 text-sm md:text-lg lg:gap-7">
-            <a
-              href="https://maps.app.goo.gl/Xb7rY5Fev3jWfo4X6"
-              target="_blank"
-              className="flex h-[2.5rem] w-1/2 place-content-center items-center rounded-[5px] bg-white shadow-md hover:scale-110 md:h-[4rem]"
-            >
-              <div className="flex place-content-center items-center gap-2">
-                <IoLocationSharp className="size-7 text-myred" />
-                <span className="uppercase text-black">Sede Delicias</span>
-              </div>
-            </a>
-            <a
-              href="https://maps.app.goo.gl/96BWsJV4TNHFv16M9"
-              target="_blank"
-              className="flex h-[2.5rem] w-1/2 place-content-center items-center rounded-[5px] bg-white shadow-md hover:scale-110 md:h-[4rem]"
-            >
-              <div className="flex place-content-center items-center gap-2">
-                <IoLocationSharp className="size-7 text-myred" />
-                <span className="uppercase text-black">Sede Circv. 1</span>
-              </div>
-            </a>
-          </div>
+        <h2 className="mb-4 text-3xl font-bold drop-shadow-[0_3px_3px_rgba(0,0,0,1)] sm:mb-6 md:text-5xl">
+          ¿Dónde estamos?
+        </h2>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <a
+            className="flex place-content-center items-center gap-1 rounded-md bg-white px-5 py-2 text-black sm:px-14 sm:py-3"
+            href="https://maps.app.goo.gl/Xb7rY5Fev3jWfo4X6"
+            target="_blank"
+          >
+            <IoLocationSharp className="size-6 text-myred sm:size-8" />
+            <span>Sede Delicias</span>
+          </a>
+          <a
+            className="flex place-content-center items-center gap-1 rounded-md bg-white px-5 py-2 text-black sm:px-14 sm:py-3"
+            href="https://maps.app.goo.gl/96BWsJV4TNHFv16M9"
+            target="_blank"
+          >
+            <IoLocationSharp className="size-6 text-myred sm:size-8" />
+            <span>Sede Circv. 1</span>
+          </a>
         </div>
       </section>
       <div>
