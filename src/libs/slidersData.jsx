@@ -176,7 +176,7 @@ export const servicesPageSliders = [
         </h2>
         <h3 className="text-base drop-shadow-[0_5px_5px_rgba(0,0,0,1)] sm:text-lg md:text-3xl lg:px-20 xl:text-4xl 2xl:text-6xl">
           Limpieza y detalle para tu vehículo. ¡Nuestros servicios de limpieza y
-          detalle son la clave para mantener tu coche en perfectas
+          detalle son la clave para mantener tu coche en perfectas condiciones!
         </h3>
       </div>
     ),
