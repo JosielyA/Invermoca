@@ -52,14 +52,14 @@ function IndexPage({
     <div>
       <Slider slides={indexPageSliders} />
 
-      <section className="overflow-hidden py-10 md:p-14">
+      <section className="overflow-hidden bg-darkblue py-10 md:p-14">
         <div className="">
           <div className="mb-10 flex place-content-center items-center text-center">
             <div className="flex flex-col items-center gap-4">
-              <h2 className="text-3xl font-bold text-myred md:text-5xl xl:text-7xl">
+              <h2 className="text-3xl font-bold text-myred drop-shadow-[0_5px_5px_rgba(0,0,0,1)] md:text-5xl xl:text-7xl">
                 Los mejores vehículos
               </h2>
-              <h3 className="w-11/12 px-10 text-lg md:w-10/12 md:px-0 md:text-2xl xl:text-4xl">
+              <h3 className="w-11/12 px-10 text-lg text-white md:w-10/12 md:px-0 md:text-2xl xl:text-4xl">
                 Encontrar el vehículo ideal que se adapte a tu estilo de vida,
                 nunca había sido tan fácil.
               </h3>
@@ -69,7 +69,7 @@ function IndexPage({
             {services.map((service, i) => (
               <div
                 key={i}
-                className="flex w-10/12 flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-md shadow-gray-600 md:w-[45%] lg:w-[30%] "
+                className="flex w-10/12 flex-col items-center gap-3 overflow-hidden rounded-lg p-4 text-center shadow-lg shadow-white md:w-[45%] lg:w-[30%] "
               >
                 <div className="flex place-content-center items-center">
                   <img src={service.imagen} className="rounded-lg" />
@@ -78,7 +78,7 @@ function IndexPage({
                   <h2 className="mb-2 text-4xl font-bold text-myred xl:text-5xl">
                     {service.titulo}
                   </h2>
-                  <p className="no-scrollbar h-[120px] overflow-y-scroll pb-4 text-xl  md:h-[120px] xl:text-2xl">
+                  <p className="no-scrollbar h-[120px] overflow-y-scroll pb-4 text-xl text-white  md:h-[120px] xl:text-2xl">
                     {service.texto}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ function IndexPage({
           </div>
         </div>
       </div>
-      <section className="">
+      <section className="bg-darkblue">
         <div className="flex max-h-[1080px] max-w-[1920px] place-content-center items-center py-10 xl:place-content-end">
           <div className="invisible absolute left-0 w-1/2 xl:visible ">
             <img src={autonegro} className="xl:min-h-[70vh]" />
@@ -128,14 +128,14 @@ function IndexPage({
                   <h2 className="text-2xl font-semibold italic text-myred xl:text-4xl">
                     {service.name}
                   </h2>
-                  <p className="text-[13px] font-thin xl:w-10/12 xl:text-lg">
+                  <p className="mb-2 text-sm font-thin text-white xl:w-10/12 xl:text-lg 2xl:text-2xl">
                     {service.description}
                   </p>
                   <div className="flex gap-4">
                     {service.name == "Limpieza" ? (
                       <Link to="/limpieza" className="add1 boton">
                         <MdLocalCarWash className="size-6" />
-                        <span className="text-[0.7rem] md:text-sm">
+                        <span className="text-[0.7rem] md:text-sm lg:text-lg">
                           Ver precios
                         </span>
                       </Link>
@@ -150,7 +150,7 @@ function IndexPage({
                       className="whats1 boton"
                     >
                       <ImWhatsapp className="size-6" />{" "}
-                      <span className="text-[0.6rem] md:text-sm">
+                      <span className="text-[0.6rem] md:text-sm lg:text-lg">
                         Ir a Whatsapp
                       </span>
                     </a>
@@ -161,7 +161,6 @@ function IndexPage({
           </div>
         </div>
       </section>
-      <div className="h-2 w-full border-myred" />
       <Footer />
     </div>
   );
