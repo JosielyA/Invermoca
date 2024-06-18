@@ -116,13 +116,19 @@ function IndexPage({
         </div>
       </div>
       <section className="bg-darkblue">
-        <div className="flex max-h-[1080px] max-w-[1920px] place-content-center items-center py-10 xl:place-content-end">
-          <div className="invisible absolute left-0 w-1/2 xl:visible ">
-            <img src={autonegro} className="xl:min-h-[70vh]" />
+        <div className="flex max-h-[1080px] place-content-center items-center py-10 xl:place-content-end">
+          <div className="absolute left-0 w-full xl:visible xl:w-2/3">
+            <img
+              src={autonegro}
+              className="z-0 h-[400px] max-h-[1000px] xl:h-[60vh]"
+            />
           </div>
-          <div className="flex flex-col place-content-around gap-10 p-5 md:p-0 xl:min-h-[65vh] xl:w-[45%] 2xl:w-[40%]">
+          <div className="z-50 flex flex-col place-content-around gap-10 p-5 md:p-0 xl:h-[65vh] xl:w-[50%]">
             {servicios.map((service, i) => (
-              <div key={i} className="flex items-center gap-4">
+              <div
+                key={i}
+                className="flex place-content-end items-center gap-4"
+              >
                 <div className="h-14 w-14 rounded-full bg-myred xl:h-16 xl:w-16"></div>
                 <div className="w-9/12">
                   <h2 className="text-2xl font-semibold italic text-myred xl:text-4xl">
